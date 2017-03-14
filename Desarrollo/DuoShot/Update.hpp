@@ -11,17 +11,24 @@
  * Created on 14 de marzo de 2017, 13:45
  */
 
-#ifndef UPDATE_HPP
 #define UPDATE_HPP
+#define UPDATE_HPP
+#include "Juego.hpp"
+#include <cstdlib>
+#include <iostream>
+#define WORLD_TICK_TIME 1/60
+#define WORLD_TICK_TIME_IA 1/25
 
-class Update {
+using namespace std;
+
+
+class Update{
 public:
-    Update();
+    Update(); 
     Update(const Update& orig);
     virtual ~Update();
+    void update();
+    
 private:
-
+    Juego * juego;
 };
-
-#endif /* UPDATE_HPP */
-

@@ -37,10 +37,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/Juego.o \
 	${OBJECTDIR}/Motor/Camera.o \
+	${OBJECTDIR}/Motor/Render.o \
 	${OBJECTDIR}/Motor/Sprite.o \
 	${OBJECTDIR}/Motor/Text.o \
 	${OBJECTDIR}/Personaje.o \
-	${OBJECTDIR}/Render.o \
 	${OBJECTDIR}/Update.o \
 	${OBJECTDIR}/main.o
 
@@ -79,6 +79,11 @@ ${OBJECTDIR}/Motor/Camera.o: Motor/Camera.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Motor/Camera.o Motor/Camera.cpp
 
+${OBJECTDIR}/Motor/Render.o: Motor/Render.cpp
+	${MKDIR} -p ${OBJECTDIR}/Motor
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Motor/Render.o Motor/Render.cpp
+
 ${OBJECTDIR}/Motor/Sprite.o: Motor/Sprite.cpp
 	${MKDIR} -p ${OBJECTDIR}/Motor
 	${RM} "$@.d"
@@ -93,11 +98,6 @@ ${OBJECTDIR}/Personaje.o: Personaje.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Personaje.o Personaje.cpp
-
-${OBJECTDIR}/Render.o: Render.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Render.o Render.cpp
 
 ${OBJECTDIR}/Update.o: Update.cpp
 	${MKDIR} -p ${OBJECTDIR}

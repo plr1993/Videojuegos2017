@@ -4,7 +4,10 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>Juego.hpp</itemPath>
       <itemPath>Personaje.hpp</itemPath>
+      <itemPath>Render.hpp</itemPath>
+      <itemPath>Update.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -13,7 +16,10 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>Juego.cpp</itemPath>
       <itemPath>Personaje.cpp</itemPath>
+      <itemPath>Render.cpp</itemPath>
+      <itemPath>Update.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -46,9 +52,21 @@
           <commandLine>-framework sfml-window -framework sfml-graphics -framework sfml-system</commandLine>
         </linkerTool>
       </compileType>
+      <item path="Juego.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Juego.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Personaje.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Personaje.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Render.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Render.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Update.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Update.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <folder path="TestFiles">
         <linkerTool>
@@ -89,9 +107,21 @@
           </linkerDynSerch>
         </linkerTool>
       </compileType>
+      <item path="Juego.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Juego.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Personaje.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Personaje.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Render.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Render.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Update.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Update.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <folder path="TestFiles">
         <linkerTool>

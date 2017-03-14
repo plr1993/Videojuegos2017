@@ -17,7 +17,7 @@
 #include <cmath>
 #include <ctime>
 #include <cstdlib>
-
+#include "Update.hpp"
 
 using namespace std;
 
@@ -26,6 +26,7 @@ using namespace std;
  */
 int main(int argc, char** argv) {
 
-    return 0;
+    Update update;
+    update.update();
 }
 

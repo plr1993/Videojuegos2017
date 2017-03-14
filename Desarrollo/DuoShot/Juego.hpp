@@ -10,7 +10,7 @@
  *
  * Created on 14 de marzo de 2017, 13:45
  */
-
+#include "Motor/Render.hpp"
 #ifndef JUEGO_HPP
 #define JUEGO_HPP
 
@@ -19,7 +19,13 @@ public:
     Juego();
     Juego(const Juego& orig);
     virtual ~Juego();
+    Render * getWindow();
+    void teclado();
+    void draw();
+    void update();
+    void updateIA();
 private:
+    Render * _window;
 
 };
 

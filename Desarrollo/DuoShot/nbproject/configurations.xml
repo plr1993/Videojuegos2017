@@ -12,6 +12,8 @@
     <logicalFolder name="Motor" displayName="Motor" projectFiles="true">
       <itemPath>Motor/Camera.cpp</itemPath>
       <itemPath>Motor/Camera.hpp</itemPath>
+      <itemPath>Motor/Render.cpp</itemPath>
+      <itemPath>Motor/Render.hpp</itemPath>
       <itemPath>Motor/Sprite.cpp</itemPath>
       <itemPath>Motor/Sprite.hpp</itemPath>
       <itemPath>Motor/Text.cpp</itemPath>
@@ -26,7 +28,6 @@
                    projectFiles="true">
       <itemPath>Juego.cpp</itemPath>
       <itemPath>Personaje.cpp</itemPath>
-      <itemPath>Render.cpp</itemPath>
       <itemPath>Update.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
@@ -71,6 +72,10 @@
       </item>
       <item path="Motor/Camera.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Motor/Render.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Motor/Render.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Motor/Sprite.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Motor/Sprite.hpp" ex="false" tool="3" flavor2="0">
@@ -82,8 +87,6 @@
       <item path="Personaje.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Personaje.hpp" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Render.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Render.hpp" ex="false" tool="3" flavor2="0">
       </item>
@@ -138,6 +141,10 @@
       </item>
       <item path="Motor/Camera.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Motor/Render.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Motor/Render.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Motor/Sprite.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Motor/Sprite.hpp" ex="false" tool="3" flavor2="0">
@@ -149,8 +156,6 @@
       <item path="Personaje.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Personaje.hpp" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Render.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Render.hpp" ex="false" tool="3" flavor2="0">
       </item>

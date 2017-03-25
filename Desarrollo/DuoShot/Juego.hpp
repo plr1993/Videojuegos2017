@@ -11,6 +11,7 @@
  * Created on 14 de marzo de 2017, 13:45
  */
 #include "Motor/Render.hpp"
+#include "Menu.hpp"
 #ifndef JUEGO_HPP
 #define JUEGO_HPP
 
@@ -26,6 +27,7 @@ public:
     void updateIA();
 private:
     Render * _window;
+    Menu * _menu;
 
 };
 

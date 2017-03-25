@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/Juego.o \
+	${OBJECTDIR}/Menu.o \
 	${OBJECTDIR}/Motor/Camera.o \
 	${OBJECTDIR}/Motor/Render.o \
 	${OBJECTDIR}/Motor/Sprite.o \
@@ -73,6 +74,11 @@ ${OBJECTDIR}/Juego.o: Juego.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Juego.o Juego.cpp
+
+${OBJECTDIR}/Menu.o: Menu.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Menu.o Menu.cpp
 
 ${OBJECTDIR}/Motor/Camera.o: Motor/Camera.cpp
 	${MKDIR} -p ${OBJECTDIR}/Motor

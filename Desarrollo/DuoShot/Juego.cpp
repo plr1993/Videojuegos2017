@@ -15,6 +15,7 @@
 
 Juego::Juego() {
    _window = new Render(1250, 750);
+   _menu = new Menu;
 
 }
 
@@ -23,6 +24,7 @@ Juego::Juego(const Juego& orig) {
 
 Juego::~Juego() {
     delete _window;
+    delete _menu;
 }
 
 Render* Juego::getWindow() {
@@ -31,7 +33,9 @@ Render* Juego::getWindow() {
 
 //Aqui todo lo que vayamos a pintar del juego
 void Juego::draw() {
-
+    //Pintamos el menu, le pasamos por parametro la ventana
+    _menu->drawMenu(_window);
+    
 }
 //Aqui introducimos todos los comenados del teclado
 void Juego::teclado() {
@@ -45,3 +49,5 @@ void Juego::update() {
 void Juego::updateIA() {
 
 }
+
+

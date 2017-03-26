@@ -15,8 +15,11 @@
 #define PERSONAJE_HPP
 #include "Motor/Render.hpp"
 #include <math.h>       /* atan2 */
+#include <iostream>
+using namespace std;
+
 const float PI = 3.14159265;
-const float speed = 80.f;
+const float speed = 150.f;
 
 
 class Personaje {
@@ -27,10 +30,12 @@ public:
     void tecladoPersonaje();
     void drawPersonaje(Render * window);
     void updatePersonaje(Render * window);
+    void disparo(Render * window);
 private:
-    sf::Sprite * _survivor, *_objective;
-    sf::Texture * _textSurvivor, *_textObj;
-    sf::Clock frameClock;
+    sf::Sprite * _survivor, *_objective, *_bala;
+    sf::Texture * _textSurvivor, *_textObj, *_textBala;
+    sf::Clock * _frameClock, *_reloj;
+    bool _disparo;
 };
 
 #endif /* PERSONAJE_HPP */

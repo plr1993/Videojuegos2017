@@ -47,6 +47,7 @@ void Juego::teclado() {
 //Aqui vamos a llamar al resto
 void Juego::update() {
     _personaje->updatePersonaje(_window);
+    _personaje->disparo(_window);
 
 }
 //Aqui vamos a llamar a la IA al boss

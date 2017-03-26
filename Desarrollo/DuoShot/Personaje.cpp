@@ -29,7 +29,17 @@ Personaje::Personaje() {
     _textObj->loadFromFile("resources/objective.png");
     _objective->setTexture(*_textObj);
     _objective->scale(0.1, 0.1);
-
+    
+    //Inicio la bala
+    _bala = new sf::Sprite;
+    _textBala = new sf::Texture;
+    _textBala->loadFromFile("resources/bala.png");
+    _bala->setTexture(*_textBala);
+    _disparo = false;
+    
+    //Inicio los relojes
+    _frameClock = new sf::Clock;
+    _reloj = new sf::Clock;
 }
 
 Personaje::Personaje(const Personaje& orig) {
@@ -40,11 +50,20 @@ Personaje::~Personaje() {
     delete _textSurvivor;
     delete _objective;
     delete _textObj;
+    delete _frameClock;
+    delete _reloj;
+    delete _bala;
+    delete _textBala;
 }
 
 void Personaje::drawPersonaje(Render* window) {
     window->getWindow()->draw(*_survivor);
     window->getWindow()->draw(*_objective);
+    /*if(_disparo){
+        window->getWindow()->draw(*_bala);
+    }*/ 
+    
+
 }
 
 void Personaje::updatePersonaje(Render * window) {
@@ -56,15 +75,17 @@ void Personaje::updatePersonaje(Render * window) {
      float dy = movimientoMouse.y - _survivor->getPosition().y;
      float rotation = (atan2(dy, dx)) * 180 / PI;
      _survivor->setRotation(rotation);
-     
      //Movemos el objetivo con el movimiento del raton
-      _objective->setPosition(movimientoMouse);
+     _objective->setPosition(movimientoMouse);
+     _bala->setPosition(_survivor->getPosition().x, _survivor->getPosition().y);
+    
+     _bala->setRotation(rotation);
 
 }
 
 void Personaje::tecladoPersonaje() {
         sf::Vector2f movement(0.f, 0.f);
-        sf::Time frameTime = frameClock.restart();
+        sf::Time frameTime = _frameClock->restart();
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
         {
@@ -85,3 +106,11 @@ void Personaje::tecladoPersonaje() {
         _survivor->move(movement * frameTime.asSeconds());
 
 }
+
+void Personaje::disparo(Render * window) {
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+    {
+        _disparo = true;
+    }
+}
+

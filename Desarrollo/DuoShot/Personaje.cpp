@@ -59,9 +59,9 @@ Personaje::~Personaje() {
 void Personaje::drawPersonaje(Render* window) {
     window->getWindow()->draw(*_survivor);
     window->getWindow()->draw(*_objective);
-    /*if(_disparo){
+    if(_disparo){
         window->getWindow()->draw(*_bala);
-    }*/ 
+    } 
     
 
 }
@@ -77,8 +77,8 @@ void Personaje::updatePersonaje(Render * window) {
      _survivor->setRotation(rotation);
      //Movemos el objetivo con el movimiento del raton
      _objective->setPosition(movimientoMouse);
+     //El update de la bala
      _bala->setPosition(_survivor->getPosition().x, _survivor->getPosition().y);
-    
      _bala->setRotation(rotation);
 
 }

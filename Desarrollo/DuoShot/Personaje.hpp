@@ -30,6 +30,7 @@ public:
 private:
     sf::Sprite * _survivor, *_objective;
     sf::Texture * _textSurvivor, *_textObj;
+    sf::Clock frameClock;
 };
 
 #endif /* PERSONAJE_HPP */

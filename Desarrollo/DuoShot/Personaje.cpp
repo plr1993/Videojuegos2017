@@ -64,6 +64,7 @@ void Personaje::updatePersonaje(Render * window) {
 
 void Personaje::tecladoPersonaje() {
         sf::Vector2f movement(0.f, 0.f);
+        sf::Time frameTime = frameClock.restart();
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
         {
@@ -81,4 +82,6 @@ void Personaje::tecladoPersonaje() {
         {
             movement.x += speed;
         }
+        _survivor->move(movement * frameTime.asSeconds());
+
 }

@@ -61,3 +61,7 @@ sf::Color Sprite::getColor() {
 void Sprite::setColor(sf::Color color) {
     p_sprite->setColor(color);
 }
+
+void Sprite::setOrigin(float x, float y) {
+    p_sprite->setOrigin(x, y);
+}

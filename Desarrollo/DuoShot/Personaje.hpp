@@ -13,14 +13,23 @@
 
 #ifndef PERSONAJE_HPP
 #define PERSONAJE_HPP
+#include "Motor/Render.hpp"
+#include <math.h>       /* atan2 */
+const float PI = 3.14159265;
+const float speed = 80.f;
+
 
 class Personaje {
 public:
     Personaje();
     Personaje(const Personaje& orig);
     virtual ~Personaje();
+    void tecladoPersonaje();
+    void drawPersonaje(Render * window);
+    void updatePersonaje(Render * window);
 private:
-
+    sf::Sprite * _survivor, *_objective;
+    sf::Texture * _textSurvivor, *_textObj;
 };
 
 #endif /* PERSONAJE_HPP */

@@ -31,7 +31,7 @@ void Update::update() {
     juego->getWindow()->getWindow()->setFramerateLimit(60); //Interpolamos el juego por defecto a 60fps
      
     while(juego->getWindow()->getWindow()->isOpen()){
-        juego->getWindow()->getWindow()->clear(sf::Color::Black);
+        juego->getWindow()->getWindow()->clear(sf::Color::White);
 
          sf::Event event;
         

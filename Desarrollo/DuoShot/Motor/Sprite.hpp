@@ -24,14 +24,13 @@ public:
     sf::FloatRect getGlobalBounds();
     sf::Color getColor();
     void setColor(sf::Color color);
+    void setOrigin(float x, float y);
 
 private:
     sf::Sprite* p_sprite;
     sf::Texture* p_textura;
     
-    virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const{
-        target.draw(*p_sprite, states);
-    }
+    //virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
     
 };
 

@@ -12,10 +12,12 @@
  */
 
 #include "Juego.hpp"
+#include "Personaje.hpp"
 
 Juego::Juego() {
    _window = new Render(1250, 750);
    _menu = new Menu;
+   _personaje = new Personaje;
 
 }
 
@@ -25,6 +27,7 @@ Juego::Juego(const Juego& orig) {
 Juego::~Juego() {
     delete _window;
     delete _menu;
+    delete _personaje;
 }
 
 Render* Juego::getWindow() {
@@ -33,16 +36,17 @@ Render* Juego::getWindow() {
 
 //Aqui todo lo que vayamos a pintar del juego
 void Juego::draw() {
-    //Pintamos el menu, le pasamos por parametro la ventana
-    _menu->drawMenu(_window);
+    _personaje->drawPersonaje(_window);
     
 }
 //Aqui introducimos todos los comenados del teclado
 void Juego::teclado() {
+    _personaje->tecladoPersonaje();
 
 }
 //Aqui vamos a llamar al resto
 void Juego::update() {
+    _personaje->updatePersonaje(_window);
 
 }
 //Aqui vamos a llamar a la IA al boss

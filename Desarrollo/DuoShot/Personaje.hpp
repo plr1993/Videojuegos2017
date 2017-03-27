@@ -16,6 +16,7 @@
 #include "Motor/Render.hpp"
 #include <math.h>       /* atan2 */
 #include <iostream>
+#include <sstream>
 using namespace std;
 
 const float PI = 3.14159265;
@@ -31,11 +32,14 @@ public:
     void drawPersonaje(Render * window);
     void updatePersonaje(Render * window);
     void disparo(Render * window);
+    void cambiarArma();
+    void vida();
 private:
-    sf::Sprite * _survivor, *_objective, *_bala;
-    sf::Texture * _textSurvivor, *_textObj, *_textBala;
-    sf::Clock * _frameClock, *_reloj;
+    sf::Sprite * _survivor, *_objective, *_bala, *_vida;
+    sf::Texture * _textSurvivor, *_textObj, *_textBala, *_textVida;
+    sf::Clock * _frameClock;
     bool _disparo;
+    int _cantVida;
 };
 
 #endif /* PERSONAJE_HPP */

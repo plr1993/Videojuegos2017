@@ -17,7 +17,7 @@ Personaje::Personaje() {
     //Inicio el Survivor
     _survivor = new sf::Sprite;
     _textSurvivor = new sf::Texture;
-    _textSurvivor->loadFromFile("resources/survivor.png");
+    _textSurvivor->loadFromFile("resources/survivor-fusil.png");
     _survivor->setTexture(*_textSurvivor);
     _survivor->setPosition(1250/2, 750/2); //Esto es el centro del juego, habra que cambiarlo
     _survivor->setOrigin(100.0, 100.0);
@@ -37,9 +37,18 @@ Personaje::Personaje() {
     _bala->setTexture(*_textBala);
     _disparo = false;
     
+    //Inicio la vida
+    _cantVida = 30;
+    _vida = new sf::Sprite;
+    _textVida = new sf::Texture;
+    _textVida->loadFromFile("resources/vida/30.png");
+    _vida->setTexture(*_textVida);
+    _vida->setPosition(20, 20);
+    _vida->scale(0.25, 0.25);
+    
+    
     //Inicio los relojes
     _frameClock = new sf::Clock;
-    _reloj = new sf::Clock;
 }
 
 Personaje::Personaje(const Personaje& orig) {
@@ -51,14 +60,16 @@ Personaje::~Personaje() {
     delete _objective;
     delete _textObj;
     delete _frameClock;
-    delete _reloj;
     delete _bala;
     delete _textBala;
+    delete _vida;
+    delete _textVida;
 }
 
 void Personaje::drawPersonaje(Render* window) {
     window->getWindow()->draw(*_survivor);
     window->getWindow()->draw(*_objective);
+    window->getWindow()->draw(*_vida);
     if(_disparo){
         window->getWindow()->draw(*_bala);
     } 
@@ -104,13 +115,71 @@ void Personaje::tecladoPersonaje() {
             movement.x += speed;
         }
         _survivor->move(movement * frameTime.asSeconds());
+        
+        cambiarArma();
+        vida();
 
 }
 
 void Personaje::disparo(Render * window) {
-    if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+    /*if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
     {
         _disparo = true;
+    }*/
+}
+
+//Este metodo es el que cambia de arma
+void Personaje::cambiarArma() {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
+    {
+        _textSurvivor->loadFromFile("resources/survivor-fusil.png");
+        _survivor->setTexture(*_textSurvivor);
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
+    {
+        _textSurvivor->loadFromFile("resources/survivor-rifle.png");
+        _survivor->setTexture(*_textSurvivor);
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3))
+    {
+        _textSurvivor->loadFromFile("resources/survivor-pistola.png");
+        _survivor->setTexture(*_textSurvivor);
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4))
+    {
+        _textSurvivor->loadFromFile("resources/survivor-taser.png");
+        _survivor->setTexture(*_textSurvivor);
     }
 }
+
+//Este metodo es el que le va a restar o sumar vida, habra que quitar lo del teclado
+void Personaje::vida() {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+    {
+        if(_cantVida > 0){
+            _cantVida--;
+            std::ostringstream stream;
+            stream << "resources/vida/" << _cantVida << ".png";
+            std::string result = stream.str();
+            _textVida->loadFromFile(result);
+            _vida->setTexture(*_textVida);
+        }
+        
+       
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+    {
+        if(_cantVida < 30){
+            _cantVida++;
+            std::ostringstream stream;
+            stream << "resources/vida/" << _cantVida << ".png";
+            std::string result = stream.str();
+            _textVida->loadFromFile(result);
+            _vida->setTexture(*_textVida);
+        }
+        
+    }
+}
+
+
 

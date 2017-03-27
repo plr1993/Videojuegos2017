@@ -15,7 +15,7 @@
 #include "Personaje.hpp"
 
 Juego::Juego() {
-   _window = new Render(1250, 750);
+   _window = new Render(1920, 1080);
    _menu = new Menu;
    _personaje = new Personaje;
 
@@ -42,12 +42,19 @@ void Juego::draw() {
 //Aqui introducimos todos los comenados del teclado
 void Juego::teclado() {
     _personaje->tecladoPersonaje();
+     //Para salir
+     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+     {
+       _window->getWindow()->close();
+     }
+               
 
 }
 //Aqui vamos a llamar al resto
 void Juego::update() {
     _personaje->updatePersonaje(_window);
     _personaje->disparo(_window);
+    
 
 }
 //Aqui vamos a llamar a la IA al boss

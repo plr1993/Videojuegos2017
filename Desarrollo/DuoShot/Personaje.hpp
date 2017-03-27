@@ -14,6 +14,7 @@
 #ifndef PERSONAJE_HPP
 #define PERSONAJE_HPP
 #include "Motor/Render.hpp"
+#include "Mapa.hpp"
 #include <math.h>       /* atan2 */
 #include <iostream>
 #include <sstream>
@@ -34,11 +35,13 @@ public:
     void disparo(Render * window);
     void cambiarArma();
     void vida();
+    void colisionesMapa(Mapa * mapa);
+    sf::Sprite * getPersonaje();
 private:
     sf::Sprite * _survivor, *_objective, *_bala, *_vida;
     sf::Texture * _textSurvivor, *_textObj, *_textBala, *_textVida;
     sf::Clock * _frameClock;
-    bool _disparo;
+    bool _disparo, _colision;
     int _cantVida;
 };
 

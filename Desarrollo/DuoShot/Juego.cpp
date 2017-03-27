@@ -19,6 +19,7 @@ Juego::Juego() {
    _menu = new Menu;
    _personaje = new Personaje;
    _companyero = new Companyero;
+   _mapa = new Mapa;
 }
 
 Juego::Juego(const Juego& orig) {
@@ -29,6 +30,7 @@ Juego::~Juego() {
     delete _menu;
     delete _personaje;
     delete _companyero;
+    delete _mapa;
 }
 
 Render* Juego::getWindow() {
@@ -39,6 +41,7 @@ Render* Juego::getWindow() {
 void Juego::draw() {
     _personaje->drawPersonaje(_window);
     _companyero->drawCompanyero(_window);
+    _mapa->drawMapa(_window);
     
 }
 //Aqui introducimos todos los comenados del teclado
@@ -51,18 +54,26 @@ void Juego::teclado() {
        _window->getWindow()->close();
      }
                
-
 }
 //Aqui vamos a llamar al resto
 void Juego::update() {
     _personaje->updatePersonaje(_window);
     _personaje->disparo(_window);
+    _mapa->updateMapa();
     
-
+    comprobarColisiones();
+   
 }
 //Aqui vamos a llamar a la IA al boss
 void Juego::updateIA() {
 
 }
+
+void Juego::comprobarColisiones() {
+    _personaje->colisionesMapa(_mapa);
+}
+
+
+
 
 

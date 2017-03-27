@@ -14,6 +14,7 @@
 #include "Menu.hpp"
 #include "Personaje.hpp"
 #include "Companyero.hpp"
+#include "Mapa.hpp"
 #ifndef JUEGO_HPP
 #define JUEGO_HPP
 
@@ -28,10 +29,12 @@ public:
     void update();
     void updateIA();
 private:
+    void comprobarColisiones();
     Render * _window;
     Menu * _menu;
     Personaje * _personaje;
     Companyero * _companyero;
+    Mapa * _mapa;
 
 };
 

@@ -49,6 +49,9 @@ Personaje::Personaje() {
     
     //Inicio los relojes
     _frameClock = new sf::Clock;
+    
+    //Comprobamos colision
+    _colision = false;
 }
 
 Personaje::Personaje(const Personaje& orig) {
@@ -91,12 +94,14 @@ void Personaje::updatePersonaje(Render * window) {
      //El update de la bala
      _bala->setPosition(_survivor->getPosition().x, _survivor->getPosition().y);
      _bala->setRotation(rotation);
+     
 
 }
 
 void Personaje::tecladoPersonaje() {
         sf::Vector2f movement(0.f, 0.f);
         sf::Time frameTime = _frameClock->restart();
+    if(_colision==false){ 
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
         {
@@ -114,6 +119,7 @@ void Personaje::tecladoPersonaje() {
         {
             movement.x += speed;
         }
+    }
         _survivor->move(movement * frameTime.asSeconds());
         
         cambiarArma();
@@ -130,26 +136,27 @@ void Personaje::disparo(Render * window) {
 
 //Este metodo es el que cambia de arma
 void Personaje::cambiarArma() {
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
-    {
-        _textSurvivor->loadFromFile("resources/survivor-fusil.png");
-        _survivor->setTexture(*_textSurvivor);
-    }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
-    {
-        _textSurvivor->loadFromFile("resources/survivor-rifle.png");
-        _survivor->setTexture(*_textSurvivor);
-    }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3))
-    {
-        _textSurvivor->loadFromFile("resources/survivor-pistola.png");
-        _survivor->setTexture(*_textSurvivor);
-    }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4))
-    {
-        _textSurvivor->loadFromFile("resources/survivor-taser.png");
-        _survivor->setTexture(*_textSurvivor);
-    }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
+        {
+            _textSurvivor->loadFromFile("resources/survivor-fusil.png");
+            _survivor->setTexture(*_textSurvivor);
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
+        {
+            _textSurvivor->loadFromFile("resources/survivor-rifle.png");
+            _survivor->setTexture(*_textSurvivor);
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3))
+        {
+            _textSurvivor->loadFromFile("resources/survivor-pistola.png");
+            _survivor->setTexture(*_textSurvivor);
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4))
+        {
+            _textSurvivor->loadFromFile("resources/survivor-taser.png");
+            _survivor->setTexture(*_textSurvivor);
+        }
+
 }
 
 //Este metodo es el que le va a restar o sumar vida, habra que quitar lo del teclado
@@ -181,5 +188,16 @@ void Personaje::vida() {
     }
 }
 
+//Metodo que comprueba las colisiones del mapa
+void Personaje::colisionesMapa(Mapa * mapa) {
+    if(mapa->getBarril()->getGlobalBounds().intersects(_survivor->getGlobalBounds())){
+        _colision = true;
+    }else{
+        _colision = false;
+    }
+}
 
 
+sf::Sprite * Personaje::getPersonaje() {
+    return _survivor;
+}

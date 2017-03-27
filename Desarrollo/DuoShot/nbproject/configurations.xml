@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>Companyero.hpp</itemPath>
       <itemPath>Juego.hpp</itemPath>
       <itemPath>Menu.hpp</itemPath>
       <itemPath>Personaje.hpp</itemPath>
@@ -26,6 +27,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>Companyero.cpp</itemPath>
       <itemPath>Juego.cpp</itemPath>
       <itemPath>Menu.cpp</itemPath>
       <itemPath>Personaje.cpp</itemPath>
@@ -62,10 +64,15 @@
             <pElem>.</pElem>
             <pElem>.</pElem>
             <pElem>.</pElem>
+            <pElem>.</pElem>
           </linkerDynSerch>
           <commandLine>-framework sfml-window -framework sfml-graphics -framework sfml-system</commandLine>
         </linkerTool>
       </compileType>
+      <item path="Companyero.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Companyero.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Juego.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Juego.hpp" ex="false" tool="3" flavor2="0">
@@ -101,6 +108,7 @@
       <folder path="TestFiles">
         <linkerTool>
           <linkerDynSerch>
+            <pElem>.</pElem>
             <pElem>.</pElem>
             <pElem>.</pElem>
             <pElem>.</pElem>
@@ -136,9 +144,14 @@
             <pElem>.</pElem>
             <pElem>.</pElem>
             <pElem>.</pElem>
+            <pElem>.</pElem>
           </linkerDynSerch>
         </linkerTool>
       </compileType>
+      <item path="Companyero.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Companyero.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Juego.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Juego.hpp" ex="false" tool="3" flavor2="0">
@@ -174,6 +187,7 @@
       <folder path="TestFiles">
         <linkerTool>
           <linkerDynSerch>
+            <pElem>.</pElem>
             <pElem>.</pElem>
             <pElem>.</pElem>
             <pElem>.</pElem>

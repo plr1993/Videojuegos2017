@@ -13,6 +13,7 @@
 #include "Motor/Render.hpp"
 #include "Menu.hpp"
 #include "Personaje.hpp"
+#include "Companyero.hpp"
 #ifndef JUEGO_HPP
 #define JUEGO_HPP
 
@@ -30,6 +31,7 @@ private:
     Render * _window;
     Menu * _menu;
     Personaje * _personaje;
+    Companyero * _companyero;
 
 };
 

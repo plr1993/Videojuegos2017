@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-MacOSX
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-MacOSX
-CND_ARTIFACT_NAME_Debug=duoshot
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/duoshot
+CND_ARTIFACT_NAME_Debug=personaje
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/personaje
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-MacOSX/package
-CND_PACKAGE_NAME_Debug=duoshot.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/duoshot.tar
+CND_PACKAGE_NAME_Debug=personaje.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/personaje.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-MacOSX
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-MacOSX
-CND_ARTIFACT_NAME_Release=duoshot
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-MacOSX/duoshot
+CND_ARTIFACT_NAME_Release=personaje
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-MacOSX/personaje
 CND_PACKAGE_DIR_Release=dist/Release/GNU-MacOSX/package
-CND_PACKAGE_NAME_Release=duoshot.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-MacOSX/package/duoshot.tar
+CND_PACKAGE_NAME_Release=personaje.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-MacOSX/package/personaje.tar
 #
 # include compiler specific variables
 #

@@ -32,6 +32,7 @@ public:
     void tecladoPersonaje();
     void drawPersonaje(Render * window);
     void updatePersonaje(Render * window);
+    void updateBala(float rotation);
     void disparo(Render * window);
     void cambiarArma();
     void vida();
@@ -42,7 +43,7 @@ private:
     sf::Texture * _textSurvivor, *_textObj, *_textBala, *_textVida;
     sf::Clock * _frameClock;
     bool _disparo, _colision;
-    int _cantVida;
+    int _cantVida, _mouseX, _mouseY;
 };
 
 #endif /* PERSONAJE_HPP */

@@ -7,13 +7,13 @@ CND_BASEDIR=`pwd`
 CND_BUILDDIR=build
 CND_DISTDIR=dist
 # Debug configuration
-CND_PLATFORM_Debug=GNU-Linux
-CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
-CND_ARTIFACT_NAME_Debug=armas_clases
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/armas_clases
-CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
-CND_PACKAGE_NAME_Debug=armasclases.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/armasclases.tar
+CND_PLATFORM_Debug=GNU-MacOSX
+CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-MacOSX
+CND_ARTIFACT_NAME_Debug=armas
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/armas
+CND_PACKAGE_DIR_Debug=dist/Debug/GNU-MacOSX/package
+CND_PACKAGE_NAME_Debug=armas.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/armas.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux

@@ -39,6 +39,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/Juego.o \
 	${OBJECTDIR}/Mapa.o \
 	${OBJECTDIR}/Menu.o \
+	${OBJECTDIR}/Motor/Arma.o \
+	${OBJECTDIR}/Motor/Bala.o \
 	${OBJECTDIR}/Motor/Camera.o \
 	${OBJECTDIR}/Motor/Render.o \
 	${OBJECTDIR}/Motor/Sprite.o \
@@ -91,6 +93,16 @@ ${OBJECTDIR}/Menu.o: Menu.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Menu.o Menu.cpp
+
+${OBJECTDIR}/Motor/Arma.o: Motor/Arma.cpp
+	${MKDIR} -p ${OBJECTDIR}/Motor
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Motor/Arma.o Motor/Arma.cpp
+
+${OBJECTDIR}/Motor/Bala.o: Motor/Bala.cpp
+	${MKDIR} -p ${OBJECTDIR}/Motor
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Motor/Bala.o Motor/Bala.cpp
 
 ${OBJECTDIR}/Motor/Camera.o: Motor/Camera.cpp
 	${MKDIR} -p ${OBJECTDIR}/Motor

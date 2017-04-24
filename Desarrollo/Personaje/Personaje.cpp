@@ -81,22 +81,26 @@ void Personaje::drawPersonaje(Render* window) {
 }
 
 void Personaje::updatePersonaje(Render * window) {
-     //Rotacion de Survivor
-     sf::Vector2f movimientoMouse;
-     movimientoMouse.x = sf::Mouse::getPosition(*window->getWindow()).x;
-     movimientoMouse.y = sf::Mouse::getPosition(*window->getWindow()).y;
-     float dx = movimientoMouse.x - _survivor->getPosition().x;
-     float dy = movimientoMouse.y - _survivor->getPosition().y;
+     sf::Vector2f mouse_pos = window->getWindow()->mapPixelToCoords(sf::Mouse::getPosition(*window->getWindow()));
+
+     float dx = mouse_pos.x - _survivor->getPosition().x;
+     float dy = mouse_pos.y - _survivor->getPosition().y;
+    //Rotacion de Survivor     
      float rotation = (atan2(dy, dx)) * 180 / PI;
      _survivor->setRotation(rotation);
      //Movemos el objetivo con el movimiento del raton
-     _objective->setPosition(movimientoMouse);
+     _objective->setPosition(mouse_pos);
+     
+     updateBala(rotation);
+}
+
+void Personaje::updateBala(float rotation) {
      //El update de la bala
      _bala->setPosition(_survivor->getPosition().x, _survivor->getPosition().y);
      _bala->setRotation(rotation);
-     
-
 }
+
+
 
 void Personaje::tecladoPersonaje() {
         sf::Vector2f movement(0.f, 0.f);
@@ -128,10 +132,12 @@ void Personaje::tecladoPersonaje() {
 }
 
 void Personaje::disparo(Render * window) {
-    /*if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
     {
+        _mouseX = sf::Mouse::getPosition(*window->getWindow()).x;
+        _mouseY = sf::Mouse::getPosition(*window->getWindow()).y;
         _disparo = true;
-    }*/
+    }
 }
 
 //Este metodo es el que cambia de arma

@@ -4,8 +4,8 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>Motor/Arma.hpp</itemPath>
-      <itemPath>Motor/Bala.hpp</itemPath>
+      <itemPath>Arma.hpp</itemPath>
+      <itemPath>Bala.hpp</itemPath>
       <itemPath>Companyero.hpp</itemPath>
       <itemPath>Juego.hpp</itemPath>
       <itemPath>Mapa.hpp</itemPath>
@@ -30,8 +30,8 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>Motor/Arma.cpp</itemPath>
-      <itemPath>Motor/Bala.cpp</itemPath>
+      <itemPath>Arma.cpp</itemPath>
+      <itemPath>Bala.cpp</itemPath>
       <itemPath>Companyero.cpp</itemPath>
       <itemPath>Juego.cpp</itemPath>
       <itemPath>Mapa.cpp</itemPath>
@@ -76,6 +76,14 @@
           <commandLine>-framework sfml-window -framework sfml-graphics -framework sfml-system</commandLine>
         </linkerTool>
       </compileType>
+      <item path="Arma.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Arma.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Bala.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Bala.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Companyero.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Companyero.hpp" ex="false" tool="3" flavor2="0">
@@ -91,14 +99,6 @@
       <item path="Menu.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Menu.hpp" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Motor/Arma.cpp" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="Motor/Arma.hpp" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Motor/Bala.cpp" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="Motor/Bala.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Motor/Camera.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -169,6 +169,14 @@
           </linkerDynSerch>
         </linkerTool>
       </compileType>
+      <item path="Arma.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Arma.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Bala.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Bala.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Companyero.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Companyero.hpp" ex="false" tool="3" flavor2="0">
@@ -184,14 +192,6 @@
       <item path="Menu.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Menu.hpp" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Motor/Arma.cpp" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="Motor/Arma.hpp" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Motor/Bala.cpp" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="Motor/Bala.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Motor/Camera.cpp" ex="false" tool="1" flavor2="0">
       </item>

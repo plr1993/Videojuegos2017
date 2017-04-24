@@ -5,20 +5,20 @@
  */
 
 /* 
- * File:   Arma.cpp
+ * File:   Bala.cpp
  * Author: sergio
  * 
- * Created on 24 de abril de 2017, 22:12
+ * Created on 24 de abril de 2017, 22:19
  */
 
-#include "Arma.hpp"
+#include "Bala.hpp"
 
-Arma::Arma() {
+Bala::Bala() {
 }
 
-Arma::Arma(const Arma& orig) {
+Bala::Bala(const Bala& orig) {
 }
 
-Arma::~Arma() {
+Bala::~Bala() {
 }
 

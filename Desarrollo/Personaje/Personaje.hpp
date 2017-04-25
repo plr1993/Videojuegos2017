@@ -22,7 +22,7 @@ using namespace std;
 
 const float PI = 3.14159265;
 const float speed = 150.f;
-
+const float speedBala = 2000;
 
 class Personaje {
 public:
@@ -32,7 +32,7 @@ public:
     void tecladoPersonaje();
     void drawPersonaje(Render * window);
     void updatePersonaje(Render * window);
-    void updateBala(float rotation);
+    void updateBala();
     void disparo(Render * window);
     void cambiarArma();
     void vida();
@@ -41,10 +41,10 @@ public:
 private:
     sf::Sprite * _survivor, *_objective, *_bala, *_vida;
     sf::Texture * _textSurvivor, *_textObj, *_textBala, *_textVida;
-    sf::Clock * _frameClock;
+    sf::Clock * _frameClock, *_clock;
     bool _disparo, _colision;
-    int _cantVida, _mouseX, _mouseY;
+    int _cantVida, _mouseX, _mouseY, _inicialBalaX, _inicialBalaY;
+    float _rotation, _posX, _posY;
 };
-
 #endif /* PERSONAJE_HPP */
 

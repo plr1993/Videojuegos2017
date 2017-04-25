@@ -5,20 +5,20 @@
  */
 
 /* 
- * File:   Arma.cpp
+ * File:   Armas.cpp
  * Author: sergio
  * 
- * Created on 24 de abril de 2017, 22:18
+ * Created on 24 de abril de 2017, 23:16
  */
 
-#include "Arma.hpp"
+#include "Armas.hpp"
 
-Arma::Arma() {
+Armas::Armas() {
 }
 
-Arma::Arma(const Arma& orig) {
+Armas::Armas(const Armas& orig) {
 }
 
-Arma::~Arma() {
+Armas::~Armas() {
 }
 

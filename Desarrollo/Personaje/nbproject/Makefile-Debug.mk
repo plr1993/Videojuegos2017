@@ -35,12 +35,12 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/Arma.o \
-	${OBJECTDIR}/Bala.o \
 	${OBJECTDIR}/Companyero.o \
 	${OBJECTDIR}/Juego.o \
 	${OBJECTDIR}/Mapa.o \
 	${OBJECTDIR}/Menu.o \
+	${OBJECTDIR}/Motor/Armas.o \
+	${OBJECTDIR}/Motor/Bala.o \
 	${OBJECTDIR}/Motor/Camera.o \
 	${OBJECTDIR}/Motor/Render.o \
 	${OBJECTDIR}/Motor/Sprite.o \
@@ -74,16 +74,6 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/personaje: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/personaje ${OBJECTFILES} ${LDLIBSOPTIONS} -framework sfml-window -framework sfml-graphics -framework sfml-system
 
-${OBJECTDIR}/Arma.o: Arma.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Arma.o Arma.cpp
-
-${OBJECTDIR}/Bala.o: Bala.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Bala.o Bala.cpp
-
 ${OBJECTDIR}/Companyero.o: Companyero.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -103,6 +93,16 @@ ${OBJECTDIR}/Menu.o: Menu.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Menu.o Menu.cpp
+
+${OBJECTDIR}/Motor/Armas.o: Motor/Armas.cpp
+	${MKDIR} -p ${OBJECTDIR}/Motor
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Motor/Armas.o Motor/Armas.cpp
+
+${OBJECTDIR}/Motor/Bala.o: Motor/Bala.cpp
+	${MKDIR} -p ${OBJECTDIR}/Motor
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Motor/Bala.o Motor/Bala.cpp
 
 ${OBJECTDIR}/Motor/Camera.o: Motor/Camera.cpp
 	${MKDIR} -p ${OBJECTDIR}/Motor

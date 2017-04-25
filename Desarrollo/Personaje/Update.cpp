@@ -29,7 +29,7 @@ void Update::update() {
     sf::Clock clock;
     sf::Clock clockIA;
     juego->getWindow()->getWindow()->setFramerateLimit(60); //Interpolamos el juego por defecto a 60fps
-     
+    juego->getWindow()->getWindow()->setMouseCursorVisible(false);
     while(juego->getWindow()->getWindow()->isOpen()){
         juego->getWindow()->getWindow()->clear(sf::Color::Black);
 

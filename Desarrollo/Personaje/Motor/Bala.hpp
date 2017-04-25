@@ -5,20 +5,23 @@
  */
 
 /* 
- * File:   Bala.cpp
+ * File:   Bala.hpp
  * Author: sergio
- * 
- * Created on 24 de abril de 2017, 22:19
+ *
+ * Created on 24 de abril de 2017, 23:16
  */
 
-#include "Bala.hpp"
+#ifndef BALA_HPP
+#define BALA_HPP
 
-Bala::Bala() {
-}
+class Bala {
+public:
+    Bala();
+    Bala(const Bala& orig);
+    virtual ~Bala();
+private:
 
-Bala::Bala(const Bala& orig) {
-}
+};
 
-Bala::~Bala() {
-}
+#endif /* BALA_HPP */
 

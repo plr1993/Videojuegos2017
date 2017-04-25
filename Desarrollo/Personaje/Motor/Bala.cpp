@@ -5,23 +5,20 @@
  */
 
 /* 
- * File:   Arma.hpp
+ * File:   Bala.cpp
  * Author: sergio
- *
- * Created on 24 de abril de 2017, 22:18
+ * 
+ * Created on 24 de abril de 2017, 23:16
  */
 
-#ifndef ARMA_HPP
-#define ARMA_HPP
+#include "Bala.hpp"
 
-class Arma {
-public:
-    Arma();
-    Arma(const Arma& orig);
-    virtual ~Arma();
-private:
+Bala::Bala() {
+}
 
-};
+Bala::Bala(const Bala& orig) {
+}
 
-#endif /* ARMA_HPP */
+Bala::~Bala() {
+}
 

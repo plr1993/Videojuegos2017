@@ -49,6 +49,7 @@ Personaje::Personaje() {
     
     //Inicio los relojes
     _frameClock = new sf::Clock;
+    _clock = new sf::Clock;
     
     //Comprobamos colision
     _colision = false;
@@ -67,6 +68,7 @@ Personaje::~Personaje() {
     delete _textBala;
     delete _vida;
     delete _textVida;
+    delete _clock;
 }
 
 void Personaje::drawPersonaje(Render* window) {
@@ -91,13 +93,16 @@ void Personaje::updatePersonaje(Render * window) {
      //Movemos el objetivo con el movimiento del raton
      _objective->setPosition(mouse_pos);
      
-     updateBala(rotation);
+     updateBala();
 }
 
-void Personaje::updateBala(float rotation) {
-     //El update de la bala
-     _bala->setPosition(_survivor->getPosition().x, _survivor->getPosition().y);
-     _bala->setRotation(rotation);
+void Personaje::updateBala() {
+    _posX = _mouseX-_inicialBalaX;
+    _posY = _mouseY-_inicialBalaY;
+   
+        
+    //cout << posX << " " << posY << endl; 
+    _bala->move(_posX, _posY);
 }
 
 
@@ -133,9 +138,23 @@ void Personaje::tecladoPersonaje() {
 
 void Personaje::disparo(Render * window) {
     if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
-    {
-        _mouseX = sf::Mouse::getPosition(*window->getWindow()).x;
-        _mouseY = sf::Mouse::getPosition(*window->getWindow()).y;
+    {   
+        sf::Vector2f mouse_pos = window->getWindow()->mapPixelToCoords(sf::Mouse::getPosition(*window->getWindow()));
+        //Calculo la posicion inicial de la bala y la posicion del raton donde ha disparado
+        _mouseX = mouse_pos.x;
+        _mouseY = mouse_pos.y;
+        _inicialBalaX = _survivor->getPosition().x;
+        _inicialBalaY = _survivor->getPosition().y;
+        
+        //Calculo el angulo inicial de la bala
+        float dx = mouse_pos.x - _survivor->getPosition().x;
+        float dy = mouse_pos.y - _survivor->getPosition().y;
+        _rotation = (atan2(dy, dx)) * 180 / PI;
+        
+         //Posicion inicial de la bala
+         _bala->setPosition(_inicialBalaX, _inicialBalaY);
+         _bala->setRotation(_rotation);
+                  
         _disparo = true;
     }
 }

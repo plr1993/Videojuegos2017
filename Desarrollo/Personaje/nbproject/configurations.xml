@@ -4,6 +4,8 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>Motor/Armas.hpp</itemPath>
+      <itemPath>Motor/Bala.hpp</itemPath>
       <itemPath>Companyero.hpp</itemPath>
       <itemPath>Juego.hpp</itemPath>
       <itemPath>Mapa.hpp</itemPath>
@@ -28,6 +30,8 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>Motor/Armas.cpp</itemPath>
+      <itemPath>Motor/Bala.cpp</itemPath>
       <itemPath>Companyero.cpp</itemPath>
       <itemPath>Juego.cpp</itemPath>
       <itemPath>Mapa.cpp</itemPath>
@@ -67,6 +71,10 @@
             <pElem>.</pElem>
             <pElem>.</pElem>
             <pElem>.</pElem>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
           </linkerDynSerch>
           <commandLine>-framework sfml-window -framework sfml-graphics -framework sfml-system</commandLine>
         </linkerTool>
@@ -86,6 +94,14 @@
       <item path="Menu.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Menu.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Motor/Armas.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Motor/Armas.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Motor/Bala.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Motor/Bala.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Motor/Camera.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -114,6 +130,10 @@
       <folder path="TestFiles">
         <linkerTool>
           <linkerDynSerch>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
             <pElem>.</pElem>
             <pElem>.</pElem>
             <pElem>.</pElem>
@@ -151,6 +171,10 @@
             <pElem>.</pElem>
             <pElem>.</pElem>
             <pElem>.</pElem>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
           </linkerDynSerch>
         </linkerTool>
       </compileType>
@@ -169,6 +193,14 @@
       <item path="Menu.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Menu.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Motor/Armas.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Motor/Armas.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Motor/Bala.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Motor/Bala.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Motor/Camera.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -197,6 +229,10 @@
       <folder path="TestFiles">
         <linkerTool>
           <linkerDynSerch>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
             <pElem>.</pElem>
             <pElem>.</pElem>
             <pElem>.</pElem>

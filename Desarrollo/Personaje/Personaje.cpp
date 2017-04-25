@@ -49,6 +49,7 @@ Personaje::Personaje() {
     
     //Inicio los relojes
     _frameClock = new sf::Clock;
+    _clock = new sf::Clock;
     
     //Comprobamos colision
     _colision = false;
@@ -67,6 +68,7 @@ Personaje::~Personaje() {
     delete _textBala;
     delete _vida;
     delete _textVida;
+    delete _clock;
 }
 
 void Personaje::drawPersonaje(Render* window) {
@@ -81,22 +83,27 @@ void Personaje::drawPersonaje(Render* window) {
 }
 
 void Personaje::updatePersonaje(Render * window) {
-     //Rotacion de Survivor
-     sf::Vector2f movimientoMouse;
-     movimientoMouse.x = sf::Mouse::getPosition(*window->getWindow()).x;
-     movimientoMouse.y = sf::Mouse::getPosition(*window->getWindow()).y;
-     float dx = movimientoMouse.x - _survivor->getPosition().x;
-     float dy = movimientoMouse.y - _survivor->getPosition().y;
+     sf::Vector2f mouse_pos = window->getWindow()->mapPixelToCoords(sf::Mouse::getPosition(*window->getWindow()));
+
+     float dx = mouse_pos.x - _survivor->getPosition().x;
+     float dy = mouse_pos.y - _survivor->getPosition().y;
+    //Rotacion de Survivor     
      float rotation = (atan2(dy, dx)) * 180 / PI;
      _survivor->setRotation(rotation);
      //Movemos el objetivo con el movimiento del raton
-     _objective->setPosition(movimientoMouse);
-     //El update de la bala
-     _bala->setPosition(_survivor->getPosition().x, _survivor->getPosition().y);
-     _bala->setRotation(rotation);
+     _objective->setPosition(mouse_pos);
      
-
+     updateBala();
 }
+
+void Personaje::updateBala() {
+    _posX = _mouseX-_inicialBalaX;
+    _posY = _mouseY-_inicialBalaY;
+   
+    _bala->move(_posX, _posY);
+}
+
+
 
 void Personaje::tecladoPersonaje() {
         sf::Vector2f movement(0.f, 0.f);
@@ -128,10 +135,26 @@ void Personaje::tecladoPersonaje() {
 }
 
 void Personaje::disparo(Render * window) {
-    /*if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
-    {
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+    {   
+        sf::Vector2f mouse_pos = window->getWindow()->mapPixelToCoords(sf::Mouse::getPosition(*window->getWindow()));
+        //Calculo la posicion inicial de la bala y la posicion del raton donde ha disparado
+        _mouseX = mouse_pos.x;
+        _mouseY = mouse_pos.y;
+        _inicialBalaX = _survivor->getPosition().x;
+        _inicialBalaY = _survivor->getPosition().y;
+        
+        //Calculo el angulo inicial de la bala
+        float dx = mouse_pos.x - _survivor->getPosition().x;
+        float dy = mouse_pos.y - _survivor->getPosition().y;
+        _rotation = (atan2(dy, dx)) * 180 / PI;
+        
+         //Posicion inicial de la bala
+         _bala->setPosition(_inicialBalaX, _inicialBalaY);
+         _bala->setRotation(_rotation);
+                  
         _disparo = true;
-    }*/
+    }
 }
 
 //Este metodo es el que cambia de arma

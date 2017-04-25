@@ -41,7 +41,7 @@ Render* Juego::getWindow() {
 void Juego::draw() {
     _personaje->drawPersonaje(_window);
     _companyero->drawCompanyero(_window);
-    _mapa->drawMapa(_window);
+    //_mapa->drawMapa(_window);
     
 }
 //Aqui introducimos todos los comenados del teclado
@@ -59,7 +59,7 @@ void Juego::teclado() {
 void Juego::update() {
     _personaje->updatePersonaje(_window);
     _personaje->disparo(_window);
-    _mapa->updateMapa();
+    //_mapa->updateMapa();
     
     comprobarColisiones();
    
@@ -70,7 +70,7 @@ void Juego::updateIA() {
 }
 
 void Juego::comprobarColisiones() {
-    _personaje->colisionesMapa(_mapa);
+    //_personaje->colisionesMapa(_mapa);
 }
 
 

@@ -100,8 +100,6 @@ void Personaje::updateBala() {
     _posX = _mouseX-_inicialBalaX;
     _posY = _mouseY-_inicialBalaY;
    
-        
-    //cout << posX << " " << posY << endl; 
     _bala->move(_posX, _posY);
 }
 

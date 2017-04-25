@@ -11,6 +11,8 @@
  * Created on 14 de marzo de 2017, 14:12
  */
 
+#include <SFML/Window/WindowStyle.hpp>
+
 #include "Render.hpp"
 
 Render::Render(float x, float y) {

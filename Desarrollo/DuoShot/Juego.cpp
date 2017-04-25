@@ -36,7 +36,7 @@ Render* Juego::getWindow() {
 
 //Aqui todo lo que vayamos a pintar del juego
 void Juego::draw() {
-    _personaje->drawPersonaje(_window);
+    _menu->drawMenu(_window);
     
 }
 //Aqui introducimos todos los comenados del teclado
@@ -46,7 +46,7 @@ void Juego::teclado() {
 }
 //Aqui vamos a llamar al resto
 void Juego::update() {
-    _personaje->updatePersonaje(_window);
+    _menu->updateMenu(_window);
 
 }
 //Aqui vamos a llamar a la IA al boss

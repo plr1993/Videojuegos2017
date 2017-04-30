@@ -8,268 +8,293 @@
  * File:   Menu.cpp
  * Author: sergio
  * 
- * Created on 25 de marzo de 2017, 18:29
+ * Created on 26 de abril de 2017, 19:19
  */
 
 #include "Menu.hpp"
-#include "Motor/Render.hpp"
-#include "Motor/Text.hpp"
-#include <cmath>
-#include <ctime>
-#include <cstdlib>
-#include <string> 
-#include <iostream>
 
 Menu::Menu() {
+    //Creo el fondo
+    _fondo = new sf::Sprite();
+    _texFondo = new sf::Texture();
+    _texFondo->loadFromFile("resources/fondo.jpg");
+    _fondo->setTexture(*_texFondo);
+    _fondo->setPosition(0, 0);
+    //Creo el logo
+    _logo = new sf::Sprite();
+    _texLogo = new sf::Texture();
+    _texLogo->loadFromFile("resources/logo.png");
+    _logo->setTexture(*_texLogo);
+    _logo->setPosition(0, 0);
     
-    //Inicio las variables
-    _fuente = new sf::Font;
-    _fondo1 = new sf::Texture;
-    _fondo2 = new sf::Texture;
-    _subfondo1 = new sf::Texture;
-    _subfondo2 = new sf::Texture;
-    _botones = new sf::Texture;
-    _titulo = new sf::Texture;
-    _sfondo1 = new sf::Sprite;
-    _sfondo2 = new sf::Sprite;
-    _ssubfondo1 = new sf::Sprite;
-    _ssubfondo2 = new sf::Sprite;
-    _stitulo = new sf::Sprite;
-    _botonJugar1=new sf::Sprite;
-    _botonJugar2=new sf::Sprite;
-    _botonJugar3=new sf::Sprite;
-    _botonJugar4=new sf::Sprite;
-    _botonOp1=new sf::Sprite;
-    _botonOp2=new sf::Sprite;
-    _botonOp3=new sf::Sprite;
-    _botonOp4=new sf::Sprite;
-    _botonSa1=new sf::Sprite;
-    _botonSa2=new sf::Sprite;
-    _botonSa3=new sf::Sprite;
-    _botonSa4=new sf::Sprite;
-  
-    //_survivor->setOrigin(100.0, 100.0);
-    //_survivor->scale(0.8, 0.8);
+    //Cargamos las letras de iniciar partida, etc.
+    _cuadrado = new sf::Sprite();
+    _cuadrado2 = new sf::Sprite();
+    _cuadrado3 = new sf::Sprite();
+    _texCuadrado = new sf::Texture();
+    _texCuadrado->loadFromFile("resources/cuadrado.png");
+    _texCuadrado2 = new sf::Texture();
+    _texCuadrado2->loadFromFile("resources/cuadrado_hover.png");
+    _cuadrado->setTexture(*_texCuadrado);
+    _cuadrado2->setTexture(*_texCuadrado);
+    _cuadrado3->setTexture(*_texCuadrado);
+    _cuadrado->setPosition(1250, 200);
+    _cuadrado2->setPosition(1250, 400);
+    _cuadrado3->setPosition(1250, 600);
     
+    _font = new sf::Font;
+    _font->loadFromFile("resources/gameplay.ttf");
+    _textInicio = new sf::Text("Iniciar Partida", *_font);
+    _textCargar = new sf::Text("Cargar Partida", *_font);
+    _textOpcion = new sf::Text("Opciones", *_font);
+    _textInicio->setColor(sf::Color::White);
+    _textInicio->setCharacterSize(50);
+    _textInicio->setPosition(1350, 250);
+    _textCargar->setColor(sf::Color::White);
+    _textCargar->setCharacterSize(50);
+    _textCargar->setPosition(1325, 450);
+    _textOpcion->setColor(sf::Color::White);
+    _textOpcion->setCharacterSize(50);
+    _textOpcion->setPosition(1400, 650);
     
-    if (!_fuente->loadFromFile("resources/sansation.ttf"))
-        std::cerr << "Error cargando la imagen cuadro.png";
-    if (!_fondo1->loadFromFile("resources/fondo1.png"))
-        std::cerr << "Error cargando la imagen fondo1.png";
-    if (!_fondo2->loadFromFile("resources/fondo2.png"))
-        std::cerr << "Error cargando la imagen fondo2.png";
-    if (!_subfondo1->loadFromFile("resources/subfondo1.png"))
-        std::cerr << "Error cargando la imagen fondo1.png";
-    if (!_subfondo2->loadFromFile("resources/subfondo2.png"))
-        std::cerr << "Error cargando la imagen subfondo2.png";
-    if (!_titulo->loadFromFile("resources/Titulo.png"))
-        std::cerr << "Error cargando la imagen titulo.png";
-    if (!_botones->loadFromFile("resources/Botones.png"))
-        std::cerr << "Error cargando la imagen Botones.png";
+    //Cargamos los sprites de seleccionar mapa
+    _mapaAgua = new sf::Sprite;
+    _texMapaAgua = new sf::Texture;
+    _texMapaAgua->loadFromFile("resources/mapa-agua.png");
+    _texMapaAguaHover = new sf::Texture;
+    _texMapaAguaHover->loadFromFile("resources/mapa-agua-hover.png");
+    _mapaAgua->setTexture(*_texMapaAgua);
+    _mapaAgua->setPosition(50, 350);
+    _mapaAgua->scale(0.95, 0.95);
     
-    _sfondo1->setTexture(*_fondo1);
-    _sfondo2->setTexture(*_fondo2);
-    _ssubfondo1->setTexture(*_subfondo1);
-    _ssubfondo2->setTexture(*_subfondo2);
-    _stitulo->setTexture(*_titulo);
-    
-    _botonJugar1->setTexture(*_botones);
-    _botonJugar2->setTexture(*_botones);
-    _botonJugar3->setTexture(*_botones);
-    _botonJugar4->setTexture(*_botones);
-    _botonOp1->setTexture(*_botones);
-    _botonOp2->setTexture(*_botones);
-    _botonOp3->setTexture(*_botones);
-    _botonOp4->setTexture(*_botones);
-    _botonSa1->setTexture(*_botones);
-    _botonSa2->setTexture(*_botones);
-    _botonSa3->setTexture(*_botones);
-    _botonSa4->setTexture(*_botones);
-    
-    _botonJugar1->setTextureRect(sf::IntRect(0, 0, 160, 60));
-    _botonJugar1->setPosition(750, 100);
-    _botonJugar1->scale(2, 2);
-    _botonJugar2->setTextureRect(sf::IntRect(180, 0, 160, 60));
-    _botonJugar2->setPosition(770, 100);
-    _botonJugar2->scale(2, 2);
-    _botonJugar3->setTextureRect(sf::IntRect(180, 70, 160, 60));
-    _botonJugar3->setPosition(770, 100);
-    _botonJugar3->scale(2, 2);
-    _botonJugar4->setTextureRect(sf::IntRect(0, 70, 160, 60));
-    _botonJugar4->setPosition(760, 100);
-    _botonJugar4->scale(2, 2);
-    
-    _botonOp1->setTextureRect(sf::IntRect(0, 140, 160, 60));
-    _botonOp1->setPosition(750, 300);
-    _botonOp1->scale(2, 2);
-    _botonOp2->setTextureRect(sf::IntRect(180, 140, 160, 60));
-    _botonOp2->setPosition(770, 300);
-    _botonOp2->scale(2, 2);
-    _botonOp3->setTextureRect(sf::IntRect(180, 206, 160, 67));
-    _botonOp3->setPosition(770, 300);
-    _botonOp3->scale(2, 2);
-    _botonOp4->setTextureRect(sf::IntRect(0, 210, 160, 60));
-    _botonOp4->setPosition(760, 300);
-    _botonOp4->scale(2, 2);
-    
-    
-    _botonSa1->setTextureRect(sf::IntRect(0, 280, 160, 60));
-    _botonSa1->setPosition(750, 480);
-    _botonSa1->scale(2, 2);
-    _botonSa2->setTextureRect(sf::IntRect(180, 280, 160, 60));
-    _botonSa2->setPosition(770, 480);
-    _botonSa2->scale(2, 2);
-    _botonSa3->setTextureRect(sf::IntRect(180, 340, 160, 65));
-    _botonSa3->setPosition(770, 470);
-    _botonSa3->scale(2, 2);
-    _botonSa4->setTextureRect(sf::IntRect(0, 340, 160, 60));
-    _botonSa4->setPosition(760, 480);
-    _botonSa4->scale(2, 2);
-    
-    
-    
-    _sfondo1->setPosition(0, 0); //Esto es el centro del juego, habra que cambiarlo
-    _sfondo2->setPosition(0, 0); //Esto es el centro del juego, habra que cambiarlo
-    _ssubfondo1->setPosition(0, 0); //Esto es el centro del juego, habra que cambiarlo
-    _ssubfondo2->setPosition(-50, 0); //Esto es el centro del juego, habra que cambiarlo
-    _stitulo->setPosition(0, 0); //Esto es el centro del juego, habra que cambiarlo
-    _stitulo->scale(0.5, 0.5);
-    
-    _sfondo1->scale(2, 1.2); //Esto es el centro del juego, habra que cambiarlo
-    _sfondo2->scale(2, 1.2); //Esto es el centro del juego, habra que cambiarlo
-    _ssubfondo1->scale(2, 1.2); //Esto es el centro del juego, habra que cambiarlo
-    _ssubfondo2->scale(2.2, 1.2); //Esto es el centro del juego, habra que cambiarlo
+    _mapaFuego = new sf::Sprite;
+    _texMapaFuego = new sf::Texture;
+    _texMapaFuego->loadFromFile("resources/mapa-fuego.png");
+    _texMapaFuegoHover = new sf::Texture;
+    _texMapaFuegoHover->loadFromFile("resources/mapa-fuego-hover.png");
+    _mapaFuego->setTexture(*_texMapaFuego);
+    _mapaFuego->setPosition(680, 350);
+    _mapaFuego->scale(0.95, 0.95);
 
     
+    _mapaCiudad = new sf::Sprite;
+    _texMapaCiudad = new sf::Texture;
+    _texMapaCiudad->loadFromFile("resources/mapa-ciudad.png");
+    _texMapaCiudadHover = new sf::Texture;
+    _texMapaCiudadHover->loadFromFile("resources/mapa-ciudad-hover.png");
+    _mapaCiudad->setTexture(*_texMapaCiudad);
+    _mapaCiudad->setPosition(1310, 350);
+    _mapaCiudad->scale(0.95, 0.95);
+
+
+    _botonJugar = new sf::Sprite;
+    _texBotonJugar = new sf::Texture;
+    _texBotonJugar->loadFromFile("resources/boton-jugar.png");
+    _texBotonJugarHover = new sf::Texture;
+    _texBotonJugarHover->loadFromFile("resources/boton-jugar-hover.png");
+    _botonJugar->setTexture(*_texBotonJugar);
+    _botonJugar->setPosition(600, 880);
+    
+    _textJugar = new sf::Text("Jugar", *_font);
+    _textJugar->setColor(sf::Color::White);
+    _textJugar->setCharacterSize(70);
+    _textJugar->setPosition(800, 920);
+    
+    _textSeleccionar = new sf::Text("Selecciona un mapa", *_font);
+    _textSeleccionar->setColor(sf::Color::White);
+    _textSeleccionar->setCharacterSize(70);
+    _textSeleccionar->setPosition(500, 900);
+    
+    _botonVolver = new sf::Sprite;
+    _botonVolver->setTexture(*_texCuadrado);
+    _botonVolver->scale(0.7, 0.7);
+    _botonVolver->setPosition(1350, 150);
+    
+    _textVolver = new sf::Text("Menu principal", *_font);
+    _textVolver->setColor(sf::Color::White);
+    _textVolver->setCharacterSize(30);
+    _textVolver->setPosition(1430, 190);
+    
+    //Cargamos el menu de los controles
+    _controles = new sf::Sprite;
+    _texControles = new sf::Texture;
+    _texControles->loadFromFile("resources/controles.png");
+    _controles->setTexture(*_texControles);
+    _controles->setPosition(50, 50);
 }
 
 Menu::Menu(const Menu& orig) {
 }
 
 Menu::~Menu() {
-    delete _fuente;
-    delete _fondo1;
-    delete _fondo2;
-    delete _subfondo1;
-    delete _subfondo2;
-    delete _sfondo1;
-    delete _sfondo2;
-    delete _ssubfondo1;
-    delete _ssubfondo2;
-    delete _stitulo;
-    delete _titulo;
+    delete _fondo;
+    delete _texFondo;
+    delete _logo;
+    delete _texLogo;
+    delete _cuadrado;
+    delete _cuadrado2;
+    delete _cuadrado3;
+    delete _texCuadrado;
+    delete _texCuadrado2;
+    delete _font;
+    delete _textInicio;
+    delete _textCargar;
+    delete _textOpcion;
+    delete _mapaAgua;
+    delete _mapaCiudad;
+    delete _mapaFuego;
+    delete _texMapaAgua;
+    delete _texMapaFuego;
+    delete _texMapaCiudad;
+    delete _texMapaAguaHover;
+    delete _texMapaFuegoHover;
+    delete _texMapaCiudadHover;
+    delete _botonJugar;
+    delete _texBotonJugar;
+    delete _textJugar;
+    delete _textSeleccionar;
+    delete _botonVolver;
+    delete _textVolver;
+    delete _controles;
+    delete _texControles;
+    delete _texBotonJugarHover;
 }
 
-//Aqui pintamos todo lo del menu, recibo por parametro la ventana si nos no puedes pintar
-void Menu::drawMenu(Render* window) {
-    //Pintamos el rectangulo
-    //Le tienes que pasar el rectangulo, para ello se lo pasas con el *_rectPrueba...para acceder al rectangulo en memoria
-    //Si le pasas _rectPrueba, le estas pasando un puntero y no vale.
-    if (fon==1) {
-        window->getWindow()->draw(*_ssubfondo1);
-        window->getWindow()->draw(*_sfondo1); 
-    } else {
-        window->getWindow()->draw(*_ssubfondo2); 
-        window->getWindow()->draw(*_sfondo2); 
-    } 
-    switch(pos) {
-        case 0: {   
-            window->getWindow()->draw(*_botonJugar1);
-            window->getWindow()->draw(*_botonOp1);
-            window->getWindow()->draw(*_botonSa1);
-            break;
-        } 
-        case 1: {  
-            if (aux3<2) {
-               window->getWindow()->draw(*_botonJugar4);
-               aux3++;
-            }else if(aux3>=2 && aux3<4){
-               window->getWindow()->draw(*_botonJugar2);
-               aux3++;
-            }else{
-               window->getWindow()->draw(*_botonJugar3);
-               aux3++;
-            }
-            window->getWindow()->draw(*_botonOp1);
-            window->getWindow()->draw(*_botonSa1);
-            break;
-        }
-        case 2: {  
-            if (aux3<2) {
-               window->getWindow()->draw(*_botonOp4);
-               aux3++;
-            }else if(aux3>=2 && aux3<4){
-               window->getWindow()->draw(*_botonOp2);
-               aux3++;
-            }else{
-               window->getWindow()->draw(*_botonOp3);
-               aux3++;
-            }
-            window->getWindow()->draw(*_botonJugar1);
-            window->getWindow()->draw(*_botonSa1);
-            break;
-        } 
-        case 3: {  
-            window->getWindow()->draw(*_botonJugar1);
-            window->getWindow()->draw(*_botonOp1);
-            if (aux3<2) {
-               window->getWindow()->draw(*_botonSa4);
-               aux3++;
-            }else if(aux3>=2 && aux3<4){
-               window->getWindow()->draw(*_botonSa2);
-               aux3++;
-            }else{
-               window->getWindow()->draw(*_botonSa3);
-               aux3++;
-            }
-            break;
-        } 
-    }
-    window->getWindow()->draw(*_stitulo);
-
+void Menu::drawMenu(Render* window, Estado * estado) {
+    //Pintamos las letras de inicio
     
+    window->getWindow()->draw(*_fondo);
+    window->getWindow()->draw(*_logo);
+    if(estado->getEstado() == 0){
+         drawLetrasInicio(window);
+    }else if(estado->getEstado() == 1){
+        drawSelecMapa(window);
+    }else if(estado->getEstado() == 2){
+        drawControles(window);
+    }
+   
+
 }
-void Menu::updateMenu(Render * window) {
-    if (fon==1) {
-        if(aux<100){
-            _ssubfondo1->setPosition(_ssubfondo1->getPosition().x+0.3,_ssubfondo1->getPosition().y);
-            aux++;
-        }
-        if(aux>=100){
-           _ssubfondo1->setPosition(_ssubfondo1->getPosition().x-0.3,_ssubfondo1->getPosition().y);
-            aux++; 
-        }
-        if(aux==200)
-            aux=0;
-    } else {
-        if(aux<100){
-            _ssubfondo2->setPosition(_ssubfondo2->getPosition().x+0.3,_ssubfondo2->getPosition().y);
-            aux++;
-        }
-        if(aux>=100){
-           _ssubfondo2->setPosition(_ssubfondo2->getPosition().x-0.3,_ssubfondo2->getPosition().y);
-            aux++; 
-        }
-        if(aux==200)
-            aux=0;
+
+void Menu::updateMenu(Render * window, sf::Sprite * objective, Estado * estado) {
+    if(estado->getEstado() == 0){
+        colisionMenu(objective);
+    }else if(estado->getEstado() == 1){
+        colisionSelecMapa(objective);
+    }else if(estado->getEstado() == 2){
+        colisionesControles(objective);
     }
-    if(aux2<55){
-        p1=p1+0.02f;
-        p2=p2+0.02f;
-        _stitulo->scale(p1,p2);
-        aux2++;
-    }
-    sf::Vector2f movimientoMouse;
-    movimientoMouse.x = sf::Mouse::getPosition(*window->getWindow()).x;
-    movimientoMouse.y = sf::Mouse::getPosition(*window->getWindow()).y;
-    if(movimientoMouse.x>=775 && movimientoMouse.x<=1070 && movimientoMouse.y>=120 && movimientoMouse.y<=200 ){
-        pos=1;
-    }else if(movimientoMouse.x>=775 && movimientoMouse.x<=1070 && movimientoMouse.y>=320 && movimientoMouse.y<=400){
-        pos=2;
-    }else if(movimientoMouse.x>=775 && movimientoMouse.x<=1070 && movimientoMouse.y>=490 && movimientoMouse.y<=560){
-        pos=3;
+
+}
+
+void Menu::drawLetrasInicio(Render * window) {
+    window->getWindow()->draw(*_cuadrado);
+    window->getWindow()->draw(*_cuadrado2);
+    window->getWindow()->draw(*_cuadrado3);
+    window->getWindow()->draw(*_textInicio);
+    window->getWindow()->draw(*_textCargar);
+    window->getWindow()->draw(*_textOpcion);
+}
+
+void Menu::drawSelecMapa(Render* window) {
+    window->getWindow()->draw(*_mapaAgua);
+    window->getWindow()->draw(*_mapaFuego);
+    window->getWindow()->draw(*_mapaCiudad);
+    window->getWindow()->draw(*_textSeleccionar);
+    window->getWindow()->draw(*_botonVolver);
+    window->getWindow()->draw(*_textVolver);
+}
+
+void Menu::drawControles(Render* window) {
+    window->getWindow()->draw(*_controles);
+    window->getWindow()->draw(*_botonJugar);
+    window->getWindow()->draw(*_textJugar);
+}
+
+
+
+
+
+//Metodo que comprueba la colision del puntero con las opciones del menu
+int Menu::colisionMenu(sf::Sprite * objective) {
+    int num = -1;
+    if(objective->getGlobalBounds().intersects(_cuadrado->getGlobalBounds())){
+        sf::Color naranja(225, 128, 28);
+        _cuadrado->setTexture(*_texCuadrado2);
+        _textInicio->setColor(naranja);
+        num = 1;
     }else{
-        pos=0;
-        aux3=0;
+        _cuadrado->setTexture(*_texCuadrado);
+        _textInicio->setColor(sf::Color::White);
     }
+    
+    if(objective->getGlobalBounds().intersects(_cuadrado2->getGlobalBounds())){
+        sf::Color naranja(225, 128, 28);
+        _cuadrado2->setTexture(*_texCuadrado2);
+        _textCargar->setColor(naranja);
+    }else{
+        _cuadrado2->setTexture(*_texCuadrado);
+        _textCargar->setColor(sf::Color::White);
+    }
+    
+    if(objective->getGlobalBounds().intersects(_cuadrado3->getGlobalBounds())){
+        sf::Color naranja(225, 128, 28);
+        _cuadrado3->setTexture(*_texCuadrado2);
+        _textOpcion->setColor(naranja);
+    }else{
+        _cuadrado3->setTexture(*_texCuadrado);
+        _textOpcion->setColor(sf::Color::White);
+    }
+    return num;
 }
+
+int Menu::colisionSelecMapa(sf::Sprite* objective) {
+    int num = -1;
+    if(objective->getGlobalBounds().intersects(_mapaAgua->getGlobalBounds())){
+        _mapaAgua->setTexture(*_texMapaAguaHover);
+        num = 2;
+    }else{
+        _mapaAgua->setTexture(*_texMapaAgua);
+    }
+            
+    if(objective->getGlobalBounds().intersects(_mapaFuego->getGlobalBounds())){
+        _mapaFuego->setTexture(*_texMapaFuegoHover);
+        num = 2;
+    }else{
+        _mapaFuego->setTexture(*_texMapaFuego);
+    }
+            
+    if(objective->getGlobalBounds().intersects(_mapaCiudad->getGlobalBounds())){
+        _mapaCiudad->setTexture(*_texMapaCiudadHover);
+         num = 2;
+    }else{
+        _mapaCiudad->setTexture(*_texMapaCiudad);
+    }
+    
+    if(objective->getGlobalBounds().intersects(_botonVolver->getGlobalBounds())){
+        _botonVolver->setTexture(*_texCuadrado2);
+        sf::Color naranja(225, 128, 28);
+        _textVolver->setColor(naranja);
+        num = 0;
+    }else{
+        _botonVolver->setTexture(*_texCuadrado);
+    }
+    return num;
+}
+
+int Menu::colisionesControles(sf::Sprite* objective) {
+    int num = -1;
+    if(objective->getGlobalBounds().intersects(_botonJugar->getGlobalBounds())){
+        _botonJugar->setTexture(*_texBotonJugarHover);
+        num = 3;
+    }else{
+        _botonJugar->setTexture(*_texBotonJugar);
+    }
+    
+    return num;
+}
+
+
+
+
+

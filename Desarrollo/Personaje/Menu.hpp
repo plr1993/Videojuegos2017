@@ -8,40 +8,36 @@
  * File:   Menu.hpp
  * Author: sergio
  *
- * Created on 25 de marzo de 2017, 18:29
+ * Created on 26 de abril de 2017, 19:19
  */
 
 #ifndef MENU_HPP
 #define MENU_HPP
-
-#include <SFML/Graphics/RectangleShape.hpp>
-#include <SFML/Graphics/Font.hpp>
-#include <SFML/Graphics/Sprite.hpp>
+#include "Estado.hpp"
 #include "Motor/Render.hpp"
+#include <iostream>
+#include <sstream>
+using namespace std;
 
 class Menu {
 public:
     Menu();
     Menu(const Menu& orig);
     virtual ~Menu();
-    void drawMenu(Render * window);
-    void updateMenu(Render * window);
-
+    void drawMenu(Render * window, Estado * estado);
+    void updateMenu(Render * window, sf::Sprite * objective, Estado * estado);
+    void drawLetrasInicio(Render * window);
+    void drawSelecMapa(Render * window);
+    void drawControles(Render * window);
+    int colisionMenu(sf::Sprite * objective);
+    int colisionSelecMapa(sf::Sprite * objective);
+    int colisionesControles(sf::Sprite * objective);
 private:
-    sf::Font * _fuente;
-    sf::Texture *_fondo1, *_fondo2, *_subfondo1, *_subfondo2, *_titulo, *_botones;
-    sf::Sprite *_sfondo1, *_sfondo2, *_ssubfondo1, *_ssubfondo2, *_stitulo;
-    sf::Sprite *_botonJugar1, *_botonJugar2, *_botonJugar3, *_botonJugar4;
-    sf::Sprite *_botonOp1, *_botonOp2, *_botonOp3, *_botonOp4;
-    sf::Sprite *_botonSa1, *_botonSa2, *_botonSa3, *_botonSa4;
-    sf::Clock frameClock;
-    int fon=1;
-    int aux=0;
-    int aux2=0;
-    int aux3=0;
-    double p1=0.5;
-    double p2=0.5;
-    int pos=0;
+    sf::Sprite *_fondo, *_logo, *_cuadrado, *_cuadrado2, *_cuadrado3, *_mapaAgua, *_mapaFuego, *_mapaCiudad, *_botonJugar, *_botonVolver, *_controles;
+    sf::Texture *_texFondo, *_texLogo, *_texCuadrado, *_texCuadrado2, *_texMapaAgua, *_texMapaFuego, *_texMapaCiudad, *_texMapaAguaHover, *_texMapaFuegoHover, *_texMapaCiudadHover, *_texBotonJugar, *_texBotonJugarHover, *_texControles;
+    sf::Font *_font;
+    sf::Text *_textInicio, *_textCargar, *_textOpcion, *_textJugar, *_textSeleccionar, *_textVolver;
+    bool _mapaSeleccionado;
 };
 
 #endif /* MENU_HPP */

@@ -1,8 +1,8 @@
-build/Debug/GNU-MacOSX/Menu.o: Menu.cpp Menu.hpp Motor/Render.hpp \
-  Motor/Text.hpp
+build/Debug/GNU-MacOSX/Menu.o: Menu.cpp Menu.hpp Estado.hpp \
+  Motor/Render.hpp
 
 Menu.hpp:
 
-Motor/Render.hpp:
+Estado.hpp:
 
-Motor/Text.hpp:
+Motor/Render.hpp:

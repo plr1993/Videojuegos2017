@@ -21,8 +21,8 @@ FC=gfortran
 AS=as
 
 # Macros
-CND_PLATFORM=GNU-Linux
-CND_DLIB_EXT=so
+CND_PLATFORM=GNU-MacOSX
+CND_DLIB_EXT=dylib
 CND_CONF=Debug
 CND_DISTDIR=dist
 CND_BUILDDIR=build
@@ -64,59 +64,65 @@ LDLIBSOPTIONS=-L/usr/lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu/libsfml-grap
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/duoshot
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/enemigos
+	${CP} /usr/lib/x86_64-linux-gnu/libsfml-window.so ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
+	-install_name_tool -change libsfml-window.so @rpath/${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libsfml-window.so ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/enemigos
+	${CP} /usr/lib/x86_64-linux-gnu/libsfml-graphics.so ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
+	-install_name_tool -change libsfml-graphics.so @rpath/${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libsfml-graphics.so ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/enemigos
+	${CP} /usr/lib/x86_64-linux-gnu/libsfml-system.so ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
+	-install_name_tool -change libsfml-system.so @rpath/${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libsfml-system.so ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/enemigos
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/duoshot: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/enemigos: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/duoshot: /usr/lib/x86_64-linux-gnu/libsfml-system.so
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/enemigos: /usr/lib/x86_64-linux-gnu/libsfml-system.so
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/duoshot: /usr/lib/x86_64-linux-gnu/libsfml-window.so
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/enemigos: /usr/lib/x86_64-linux-gnu/libsfml-window.so
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/duoshot: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/enemigos: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/duoshot ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/enemigos ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/Enemigo.o: Enemigo.cpp 
+${OBJECTDIR}/Enemigo.o: Enemigo.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Enemigo.o Enemigo.cpp
 
-${OBJECTDIR}/Juego.o: Juego.cpp 
+${OBJECTDIR}/Juego.o: Juego.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Juego.o Juego.cpp
 
-${OBJECTDIR}/Motor/Camera.o: Motor/Camera.cpp 
+${OBJECTDIR}/Motor/Camera.o: Motor/Camera.cpp
 	${MKDIR} -p ${OBJECTDIR}/Motor
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Motor/Camera.o Motor/Camera.cpp
 
-${OBJECTDIR}/Motor/Render.o: Motor/Render.cpp 
+${OBJECTDIR}/Motor/Render.o: Motor/Render.cpp
 	${MKDIR} -p ${OBJECTDIR}/Motor
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Motor/Render.o Motor/Render.cpp
 
-${OBJECTDIR}/Motor/Sprite.o: Motor/Sprite.cpp 
+${OBJECTDIR}/Motor/Sprite.o: Motor/Sprite.cpp
 	${MKDIR} -p ${OBJECTDIR}/Motor
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Motor/Sprite.o Motor/Sprite.cpp
 
-${OBJECTDIR}/Motor/Text.o: Motor/Text.cpp 
+${OBJECTDIR}/Motor/Text.o: Motor/Text.cpp
 	${MKDIR} -p ${OBJECTDIR}/Motor
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Motor/Text.o Motor/Text.cpp
 
-${OBJECTDIR}/Personaje.o: Personaje.cpp 
+${OBJECTDIR}/Personaje.o: Personaje.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Personaje.o Personaje.cpp
 
-${OBJECTDIR}/Update.o: Update.cpp 
+${OBJECTDIR}/Update.o: Update.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Update.o Update.cpp
 
-${OBJECTDIR}/main.o: main.cpp 
+${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
@@ -127,7 +133,8 @@ ${OBJECTDIR}/main.o: main.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/duoshot
+	${RM} -r ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libsfml-window.so ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libsfml-graphics.so ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libsfml-system.so
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/enemigos
 
 # Subprojects
 .clean-subprojects:

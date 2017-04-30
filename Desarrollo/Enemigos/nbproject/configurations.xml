@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="97">
+<configurationDescriptor version="100">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
@@ -63,6 +63,9 @@
           <linkerAddLib>
             <pElem>/usr/lib/x86_64-linux-gnu</pElem>
           </linkerAddLib>
+          <linkerDynSerch>
+            <pElem>.</pElem>
+          </linkerDynSerch>
           <linkerLibItems>
             <linkerLibFileItem>/usr/lib/x86_64-linux-gnu/libsfml-graphics.so</linkerLibFileItem>
             <linkerLibFileItem>/usr/lib/x86_64-linux-gnu/libsfml-system.so</linkerLibFileItem>
@@ -126,6 +129,11 @@
         <asmTool>
           <developmentMode>5</developmentMode>
         </asmTool>
+        <linkerTool>
+          <linkerDynSerch>
+            <pElem>.</pElem>
+          </linkerDynSerch>
+        </linkerTool>
       </compileType>
       <item path="Enemigo.cpp" ex="false" tool="1" flavor2="0">
       </item>

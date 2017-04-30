@@ -11,10 +11,11 @@
  * Created on 14 de marzo de 2017, 13:45
  */
 #include "Motor/Render.hpp"
-#include "Menu.hpp"
 #include "Personaje.hpp"
 #include "Companyero.hpp"
 #include "Mapa.hpp"
+#include "Menu.hpp"
+#include "Estado.hpp"
 #ifndef JUEGO_HPP
 #define JUEGO_HPP
 
@@ -31,10 +32,13 @@ public:
 private:
     void comprobarColisiones();
     Render * _window;
-    Menu * _menu;
     Personaje * _personaje;
     Companyero * _companyero;
     Mapa * _mapa;
+    Menu *_menu;
+    Estado *_estado;
+    sf::Sprite *_objective;
+    sf::Texture *_textObj;
 
 };
 

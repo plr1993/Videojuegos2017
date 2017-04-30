@@ -16,6 +16,7 @@
 
 #include "Mapa.hpp"
 
+
 Mapa::Mapa() {
     //Inicio los barriles
     _barril = new sf::Sprite;
@@ -33,6 +34,31 @@ Mapa::Mapa() {
     //Inicio el reloj
     _reloj = new sf::Clock;
     
+    _width = new int();
+    _height = new int();
+    _tileHeight = new int();
+    _tileWidth = new int();
+    _capaColisiones = new int*[64];  
+    for(int i =0; i<64; i++){
+        _capaColisiones[i] = new int[64];
+    }
+    
+    _spritesMapa = new sf::Sprite*[64];
+     for(int i =0; i<64; i++){
+        _spritesMapa[i] = new sf::Sprite[64];
+        }
+
+
+    //Iniciamos las texturas
+    _Agua = new sf::Texture();
+    _Ciudad1 = new sf::Texture();
+    _Ciudad2 = new sf::Texture();
+    _Ciudad3 = new sf::Texture();
+    _Ciudad4 = new sf::Texture();
+    _Fuego1 = new sf::Texture();
+    _Fuego2 = new sf::Texture();
+    _Fuego3 = new sf::Texture();
+    
 }
 
 Mapa::Mapa(const Mapa& orig) {
@@ -43,7 +69,35 @@ Mapa::~Mapa() {
     delete _barril2;
     delete _textBarril;
     delete _reloj;
+    
+    delete _width;
+    delete _height;
+    delete _tileHeight;
+    delete _tileWidth;
+    delete _Agua;
+    delete _Ciudad1;
+    delete _Ciudad2;
+    delete _Ciudad3;
+    delete _Ciudad4;
+    delete _Fuego1;
+    delete _Fuego2;
+    delete _Fuego3;
+    
+     for(int i =0; i<64; i++){
+        delete[] _spritesMapa[i];
+    }
+      for(int i =0; i<64; i++){
+        delete[] _capaColisiones[i];
+    }
 }
+
+void Mapa::cargarMapaXML(int nivel) {
+    
+   
+   
+}
+
+
 
 
 void Mapa::drawMapa(Render* window) {

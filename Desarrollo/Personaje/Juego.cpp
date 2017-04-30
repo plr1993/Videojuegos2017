@@ -13,13 +13,25 @@
 
 #include "Juego.hpp"
 #include "Personaje.hpp"
+#include "Estado.hpp"
 
 Juego::Juego() {
    _window = new Render(1920, 1080);
-   _menu = new Menu;
    _personaje = new Personaje;
    _companyero = new Companyero;
    _mapa = new Mapa;
+   _estado = new Estado;
+   _menu = new Menu();
+
+   //El Objetivo del puntero
+    //Inicio el Objetivo
+    _objective = new sf::Sprite;
+    _textObj = new sf::Texture;
+    _textObj->loadFromFile("resources/objective.png");
+    _objective->setTexture(*_textObj);
+    _objective->scale(0.1, 0.1);
+    
+
 }
 
 Juego::Juego(const Juego& orig) {
@@ -27,10 +39,13 @@ Juego::Juego(const Juego& orig) {
 
 Juego::~Juego() {
     delete _window;
-    delete _menu;
     delete _personaje;
     delete _companyero;
     delete _mapa;
+    delete _menu;
+    delete _estado;
+    delete _objective;
+    delete _textObj;
 }
 
 Render* Juego::getWindow() {
@@ -39,8 +54,17 @@ Render* Juego::getWindow() {
 
 //Aqui todo lo que vayamos a pintar del juego
 void Juego::draw() {
-    _personaje->drawPersonaje(_window);
-    _companyero->drawCompanyero(_window);
+    //Segun el etsado pinto una cosa u otra
+    if(_estado->getEstado() == 0 || _estado->getEstado() == 1 || _estado->getEstado() == 2){
+        _menu->drawMenu(_window, _estado);
+    }else if(_estado->getEstado() == 3){
+        _personaje->drawPersonaje(_window);
+        _companyero->drawCompanyero(_window);
+    }
+    //Pinto el objetivo siempre
+
+    _window->getWindow()->draw(*_objective);
+
     //_mapa->drawMapa(_window);
     
 }
@@ -57,23 +81,42 @@ void Juego::teclado() {
 }
 //Aqui vamos a llamar al resto
 void Juego::update() {
-    _personaje->updatePersonaje(_window);
-    _personaje->disparo(_window);
-    //_mapa->updateMapa();
+    //Controlamos lo que pulsamos con el raton
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+    {  
+        //Si cuando hace colision el raton con el menu cambiamos el estado
+       
+        if(_menu->colisionMenu(_objective) == 1 && _estado->getEstado() == 0){
+            _estado->setEstado(1);
+        }
+        if(_menu->colisionSelecMapa(_objective) == 2 && _estado->getEstado() == 1){
+            _estado->setEstado(2);
+        }
+        if(_menu->colisionesControles(_objective) == 3 && _estado->getEstado() == 2){
+            _estado->setEstado(3);
+        }
+         if(_menu->colisionSelecMapa(_objective) == 0 && _estado->getEstado() == 1){
+            _estado->setEstado(0);
+        }
+    }
     
-    comprobarColisiones();
-   
+    //Segun el estado cargo una cosa u otra
+    if(_estado->getEstado() == 0 || _estado->getEstado() == 1 || _estado->getEstado() == 2){ //Menu principal
+       _menu->updateMenu(_window, _objective, _estado);
+    }else if(_estado->getEstado() == 3){ //Juego
+       _personaje->updatePersonaje(_window);
+       _personaje->disparo(_window);
+    }
+    
+    //Objetivo del puntero
+    sf::Vector2f mouse_pos = _window->getWindow()->mapPixelToCoords(sf::Mouse::getPosition(*_window->getWindow()));
+    _objective->setPosition(mouse_pos);
+
 }
+
+
+
 //Aqui vamos a llamar a la IA al boss
 void Juego::updateIA() {
 
 }
-
-void Juego::comprobarColisiones() {
-    //_personaje->colisionesMapa(_mapa);
-}
-
-
-
-
-

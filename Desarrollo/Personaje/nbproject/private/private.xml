@@ -10,15 +10,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/sergio/Documents/GitHub/Videojuegos2017/Desarrollo/Personaje/Motor/Armas.hpp</file>
-            <file>file:/Users/sergio/Documents/GitHub/Videojuegos2017/Desarrollo/Personaje/Motor/Bala.cpp</file>
-            <file>file:/Users/sergio/Documents/GitHub/Videojuegos2017/Desarrollo/Personaje/Personaje.hpp</file>
-            <file>file:/Users/sergio/Documents/GitHub/Videojuegos2017/Desarrollo/Personaje/Motor/Bala.hpp</file>
+            <file>file:/Users/sergio/Documents/GitHub/Videojuegos2017/Desarrollo/Personaje/Juego.cpp</file>
             <file>file:/Users/sergio/Documents/GitHub/Videojuegos2017/Desarrollo/Personaje/Juego.hpp</file>
-            <file>file:/Users/sergio/Documents/GitHub/Videojuegos2017/Desarrollo/Personaje/Mapa.hpp</file>
-            <file>file:/Users/sergio/Documents/GitHub/Videojuegos2017/Desarrollo/Personaje/Companyero.hpp</file>
-            <file>file:/Users/sergio/Documents/GitHub/Videojuegos2017/Desarrollo/Personaje/Personaje.cpp</file>
-            <file>file:/Users/sergio/Documents/GitHub/Videojuegos2017/Desarrollo/Personaje/Motor/Armas.cpp</file>
+            <file>file:/Users/sergio/Documents/GitHub/Videojuegos2017/Desarrollo/Personaje/Menu.hpp</file>
+            <file>file:/Users/sergio/Documents/GitHub/Videojuegos2017/Desarrollo/Personaje/Menu.cpp</file>
         </group>
     </open-files>
 </project-private>

@@ -19,7 +19,7 @@ Personaje::Personaje() {
     _textSurvivor = new sf::Texture;
     _textSurvivor->loadFromFile("resources/survivor-fusil.png");
     _survivor->setTexture(*_textSurvivor);
-    _survivor->setPosition(1250/2, 750/2); //Esto es el centro del juego, habra que cambiarlo
+    _survivor->setPosition(1920/2, 1080/2); //Esto es el centro del juego, habra que cambiarlo
     _survivor->setOrigin(100.0, 100.0);
     _survivor->scale(0.8, 0.8);
     
@@ -45,7 +45,7 @@ Personaje::Personaje() {
     _vida->setTexture(*_textVida);
     _vida->setPosition(20, 20);
     _vida->scale(0.25, 0.25);
-    
+    _vida->setOrigin(0, 0);
     
     //Inicio los relojes
     _frameClock = new sf::Clock;
@@ -74,7 +74,7 @@ Personaje::~Personaje() {
 void Personaje::drawPersonaje(Render* window) {
     window->getWindow()->draw(*_survivor);
     window->getWindow()->draw(*_objective);
-    window->getWindow()->draw(*_vida);
+    //window->getWindow()->draw(*_vida);
     if(_disparo){
         window->getWindow()->draw(*_bala);
     } 
@@ -92,7 +92,6 @@ void Personaje::updatePersonaje(Render * window) {
      _survivor->setRotation(rotation);
      //Movemos el objetivo con el movimiento del raton
      _objective->setPosition(mouse_pos);
-     
      updateBala();
 }
 

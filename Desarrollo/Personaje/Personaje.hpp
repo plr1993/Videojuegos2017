@@ -21,7 +21,7 @@
 using namespace std;
 
 const float PI = 3.14159265;
-const float speed = 150.f;
+const float speed = 200.f;
 const float speedBala = 2000;
 
 class Personaje {

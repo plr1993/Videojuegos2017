@@ -3,7 +3,7 @@
 
 Camera::Camera() {
    p_camera = new sf::View();
-   p_camera->setSize(1250, 750);
+   p_camera->setSize(1920, 1080);
 
 }
 

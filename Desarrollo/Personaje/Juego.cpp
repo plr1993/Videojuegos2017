@@ -22,6 +22,7 @@ Juego::Juego() {
    _mapa = new Mapa;
    _estado = new Estado;
    _menu = new Menu();
+   _camera = new Camera();
 
    //El Objetivo del puntero
     //Inicio el Objetivo
@@ -30,8 +31,13 @@ Juego::Juego() {
     _textObj->loadFromFile("resources/objective.png");
     _objective->setTexture(*_textObj);
     _objective->scale(0.1, 0.1);
-    
 
+     //Cargamos la barra superior
+    _barraSuperior = new sf::Sprite;
+    _textBarra = new sf::Texture;
+    _textBarra->loadFromFile("resources/barra-superior.png");
+    _barraSuperior->setTexture(*_textBarra);
+    _barraSuperior->setPosition(0, 0);
 }
 
 Juego::Juego(const Juego& orig) {
@@ -46,6 +52,9 @@ Juego::~Juego() {
     delete _estado;
     delete _objective;
     delete _textObj;
+    delete _camera;
+    delete _barraSuperior;
+    delete _textBarra;
 }
 
 Render* Juego::getWindow() {
@@ -55,17 +64,21 @@ Render* Juego::getWindow() {
 //Aqui todo lo que vayamos a pintar del juego
 void Juego::draw() {
     //Segun el etsado pinto una cosa u otra
-    if(_estado->getEstado() == 0 || _estado->getEstado() == 1 || _estado->getEstado() == 2){
+    if(*_estado->getEstado() == 0 || *_estado->getEstado() == 1 ||* _estado->getEstado() == 2){
         _menu->drawMenu(_window, _estado);
-    }else if(_estado->getEstado() == 3){
+    }else if(*_estado->getEstado() == 3){
+        
+        _mapa->drawMapa(_window);
+        //_window->getWindow()->draw(*_barraSuperior);
         _personaje->drawPersonaje(_window);
-        _companyero->drawCompanyero(_window);
+        //_companyero->drawCompanyero(_window);
+
     }
     //Pinto el objetivo siempre
 
     _window->getWindow()->draw(*_objective);
-
-    //_mapa->drawMapa(_window);
+    
+    
     
 }
 //Aqui introducimos todos los comenados del teclado
@@ -85,27 +98,29 @@ void Juego::update() {
     if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
     {  
         //Si cuando hace colision el raton con el menu cambiamos el estado
-       
-        if(_menu->colisionMenu(_objective) == 1 && _estado->getEstado() == 0){
+        if(_menu->colisionMenu(_objective) == 1 && *_estado->getEstado() == 0){
             _estado->setEstado(1);
         }
-        if(_menu->colisionSelecMapa(_objective) == 2 && _estado->getEstado() == 1){
+        if(_menu->colisionSelecMapa(_objective) == 2 && *_estado->getEstado() == 1){
             _estado->setEstado(2);
         }
-        if(_menu->colisionesControles(_objective) == 3 && _estado->getEstado() == 2){
+        if(_menu->colisionesControles(_objective) == 3 && *_estado->getEstado() == 2){
             _estado->setEstado(3);
         }
-         if(_menu->colisionSelecMapa(_objective) == 0 && _estado->getEstado() == 1){
+        if(_menu->colisionSelecMapa(_objective) == 0 && *_estado->getEstado() == 1){
             _estado->setEstado(0);
         }
     }
     
     //Segun el estado cargo una cosa u otra
-    if(_estado->getEstado() == 0 || _estado->getEstado() == 1 || _estado->getEstado() == 2){ //Menu principal
+    if(*_estado->getEstado() == 0 || *_estado->getEstado() == 1 || *_estado->getEstado() == 2){ //Menu principal
        _menu->updateMenu(_window, _objective, _estado);
-    }else if(_estado->getEstado() == 3){ //Juego
+    }else if(*_estado->getEstado() == 3){ //Juego
        _personaje->updatePersonaje(_window);
        _personaje->disparo(_window);
+       _mapa->updateMapa();
+       controlarCamera();
+       _window->getWindow()->setView(_camera->getCamera());
     }
     
     //Objetivo del puntero
@@ -114,9 +129,14 @@ void Juego::update() {
 
 }
 
-
-
 //Aqui vamos a llamar a la IA al boss
 void Juego::updateIA() {
 
+}
+
+void Juego::controlarCamera() {
+    cout << _personaje->getPersonaje()->getPosition().x << endl;
+    _camera->setCenter(_personaje->getPersonaje()->getPosition().x, _personaje->getPersonaje()->getPosition().y);
+    
+    
 }

@@ -69,7 +69,7 @@ void Juego::draw() {
     }else if(*_estado->getEstado() == 3){
         
         _mapa->drawMapa(_window);
-        //_window->getWindow()->draw(*_barraSuperior);
+        _window->getWindow()->draw(*_barraSuperior);
         _personaje->drawPersonaje(_window);
         _companyero->drawCompanyero(_window);
 
@@ -140,8 +140,6 @@ void Juego::updateIA() {
 }
 
 void Juego::controlarCamera() {
-    cout << _personaje->getPersonaje()->getPosition().x << endl;
     _camera->setCenter(_personaje->getPersonaje()->getPosition().x, _personaje->getPersonaje()->getPosition().y);
-    
-    
+    _barraSuperior->setPosition(_camera->getCamera().getCenter().x-960, _camera->getCamera().getCenter().y-550);
 }

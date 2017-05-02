@@ -20,7 +20,7 @@
 #include <sstream>
 using namespace std;
 const float PI2 = 3.14159265;
-const float speed2 = 150.f;
+const float speed2 = 200.f;
 class Companyero {
 public:
      Companyero();

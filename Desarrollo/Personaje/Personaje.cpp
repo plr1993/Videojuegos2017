@@ -43,8 +43,8 @@ Personaje::Personaje() {
     _textVida = new sf::Texture;
     _textVida->loadFromFile("resources/vida/30.png");
     _vida->setTexture(*_textVida);
-    _vida->setPosition(20, 20);
-    _vida->scale(0.25, 0.25);
+    _vida->setPosition(40, 20);
+    _vida->scale(0.20, 0.20);
     _vida->setOrigin(0, 0);
     
     //Inicio los relojes
@@ -74,7 +74,7 @@ Personaje::~Personaje() {
 void Personaje::drawPersonaje(Render* window) {
     window->getWindow()->draw(*_survivor);
     window->getWindow()->draw(*_objective);
-    //window->getWindow()->draw(*_vida);
+    window->getWindow()->draw(*_vida);
     if(_disparo){
         window->getWindow()->draw(*_bala);
     } 

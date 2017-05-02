@@ -71,7 +71,7 @@ void Juego::draw() {
         _mapa->drawMapa(_window);
         //_window->getWindow()->draw(*_barraSuperior);
         _personaje->drawPersonaje(_window);
-        //_companyero->drawCompanyero(_window);
+        _companyero->drawCompanyero(_window);
 
     }
     //Pinto el objetivo siempre
@@ -121,6 +121,11 @@ void Juego::update() {
        _mapa->updateMapa();
        controlarCamera();
        _window->getWindow()->setView(_camera->getCamera());
+       //Compañero
+       float posX=_personaje->getPersonaje()->getPosition().x;//posicion del protagonista
+       float posY=_personaje->getPersonaje()->getPosition().y;//posicion del protagonista
+       _companyero->updateCompanyero(_window,posX, posY,_mapa);
+       _companyero->disparo(_window);
     }
     
     //Objetivo del puntero

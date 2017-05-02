@@ -165,11 +165,11 @@ void Menu::drawMenu(Render* window, Estado * estado) {
     
     window->getWindow()->draw(*_fondo);
     window->getWindow()->draw(*_logo);
-    if(estado->getEstado() == 0){
+    if(*estado->getEstado() == 0){
          drawLetrasInicio(window);
-    }else if(estado->getEstado() == 1){
+    }else if(*estado->getEstado() == 1){
         drawSelecMapa(window);
-    }else if(estado->getEstado() == 2){
+    }else if(*estado->getEstado() == 2){
         drawControles(window);
     }
    
@@ -177,11 +177,11 @@ void Menu::drawMenu(Render* window, Estado * estado) {
 }
 
 void Menu::updateMenu(Render * window, sf::Sprite * objective, Estado * estado) {
-    if(estado->getEstado() == 0){
+    if(*estado->getEstado() == 0){
         colisionMenu(objective);
-    }else if(estado->getEstado() == 1){
+    }else if(*estado->getEstado() == 1){
         colisionSelecMapa(objective);
-    }else if(estado->getEstado() == 2){
+    }else if(*estado->getEstado() == 2){
         colisionesControles(objective);
     }
 

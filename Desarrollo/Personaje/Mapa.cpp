@@ -59,12 +59,23 @@ Mapa::Mapa() {
     _Fuego2 = new sf::Texture();
     _Fuego3 = new sf::Texture();
     
+    //Cargamos el mapa
+    _mapa = new sf::Sprite;
+    _textMapa = new sf::Texture;
+    _textMapa->loadFromFile("tileset/Ciudad.jpg");
+    _mapa->setTexture(*_textMapa);
+    _mapa->setPosition((1920-3000)/2, (1080-3000)/2.0f);
+    
+   
+
 }
 
 Mapa::Mapa(const Mapa& orig) {
 }
 
 Mapa::~Mapa() {
+    delete _mapa;
+    delete _textMapa;
     delete _barril;
     delete _barril2;
     delete _textBarril;
@@ -82,6 +93,7 @@ Mapa::~Mapa() {
     delete _Fuego1;
     delete _Fuego2;
     delete _Fuego3;
+   
     
      for(int i =0; i<64; i++){
         delete[] _spritesMapa[i];
@@ -92,7 +104,13 @@ Mapa::~Mapa() {
 }
 
 void Mapa::cargarMapaXML(int nivel) {
-    
+    if(nivel == 1){
+        
+    }else if(nivel == 2){
+        
+    }else if(nivel == 3){
+        
+    }
    
    
 }
@@ -101,6 +119,7 @@ void Mapa::cargarMapaXML(int nivel) {
 
 
 void Mapa::drawMapa(Render* window) {
+    window->getWindow()->draw(*_mapa);
     window->getWindow()->draw(*_barril);
     window->getWindow()->draw(*_barril2);
 }

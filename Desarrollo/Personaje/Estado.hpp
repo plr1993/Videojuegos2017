@@ -19,10 +19,12 @@ public:
     Estado();
     Estado(const Estado& orig);
     virtual ~Estado();
-    int getEstado();
+    int * getEstado();
     void setEstado(int i);
+    int * getMapa();
+    void setMapa(int i);
 private:
-    int _estado;
+    int * _estado, *_mapa;
 };
 
 #endif /* ESTADO_HPP */

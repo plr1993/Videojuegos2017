@@ -12,6 +12,8 @@
  */
 
 #include "Update.hpp"
+#include "iostream"
+using namespace std;
 
 Update::Update() {
     juego = new Juego();
@@ -31,6 +33,11 @@ void Update::update() {
     juego->getWindow()->getWindow()->setFramerateLimit(60); //Interpolamos el juego por defecto a 60fps
     juego->getWindow()->getWindow()->setMouseCursorVisible(false);
     while(juego->getWindow()->getWindow()->isOpen()){
+
+	
+
+
+        
         juego->getWindow()->getWindow()->clear(sf::Color::Black);
 
          sf::Event event;
@@ -43,19 +50,25 @@ void Update::update() {
        
        juego->teclado();
        //Aqui meto todo lo que vaya a mover y limitamos a 1/60
-       if(clock.getElapsedTime().asMilliseconds() > WORLD_TICK_TIME){
+       if(clockIA.getElapsedTime().asMilliseconds() > 0.1){
             juego->update(); //Aqui metemos el juego
-            clock.restart(); 
+            //Se muestra un mensaje por pantalla.
+            //cout << "Entro al update" <<clock.getElapsedTime().asMilliseconds()<< endl; 
+            clockIA.restart();
+
        }
        
        //Aqui meto todo lo que se ejecute de la IA y limitamos a 1/25
        if(clockIA.getElapsedTime().asMicroseconds() > WORLD_TICK_TIME_IA){
            juego->updateIA(); //Aqui metemos la IA
-           clockIA.restart();
+       }
+       if(clock.getElapsedTime().asMilliseconds() > 1){
+            juego->draw();
+            juego->getWindow()->getWindow()->display(); 
+            clock.restart(); 
+            //cout << "Entro al Draw" <<clock.getElapsedTime().asMilliseconds()<< endl; 
+
        }
        
-       juego->draw();
-       juego->getWindow()->getWindow()->display();
     }
 }
-

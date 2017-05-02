@@ -14,26 +14,32 @@
 #ifndef COMPANYERO_HPP
 #define COMPANYERO_HPP
 #include "Motor/Render.hpp"
+#include "Mapa.hpp"
 #include <math.h>       /* atan2 */
 #include <iostream>
 #include <sstream>
 using namespace std;
-
+const float PI2 = 3.14159265;
+const float speed2 = 150.f;
 class Companyero {
 public:
-    Companyero();
+     Companyero();
     Companyero(const Companyero& orig);
     virtual ~Companyero();
     void tecladoCompanyero();
     void drawCompanyero(Render * window);
-    void updateCompanyero(Render * window);
+    void updateCompanyero(Render * window,float posX,float posY,Mapa * mapa);
+    void perseguir(float posX, float posY, float &speedx, float &speedy, float factor);
     void disparo(Render * window);
     void cambiarArma();
     void vida();
 private:
-    sf::Sprite * _vida;
-    sf::Texture * _textVida;
+    sf::Sprite * _survivor2,* _vida, *_bala;
+    sf::Texture * _textSurvivor2,* _textVida,*_textBala;
+    sf::Clock frameClock, updatepath;
+    bool _disparo, _colision;
     int _cantVida;
+    float movX, movY, factor, speedx, speedy;
 };
 
 #endif /* COMPANYERO_HPP */

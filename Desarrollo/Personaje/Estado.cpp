@@ -14,21 +14,32 @@
 #include "Estado.hpp"
 
 Estado::Estado() {
-    _estado = 0;
+    _estado = new int(0);
+    _mapa = new int(0);
 }
 
 Estado::Estado(const Estado& orig) {
 }
 
 Estado::~Estado() {
+    delete _estado;
+    delete _mapa;
 }
 
-int Estado::getEstado() {
+int * Estado::getEstado() {
     return _estado;
 }
 
 void Estado::setEstado(int i) {
-    this->_estado = i;
+    *_estado = i;
+}
+
+int* Estado::getMapa() {
+    return _mapa;
+}
+
+void Estado::setMapa(int i) {
+    *_mapa = i;
 }
 
 

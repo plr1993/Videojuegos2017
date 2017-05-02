@@ -35,8 +35,8 @@ public:
     void cargarMapaXML(int nivel);
     
 private:
-    sf::Sprite * _barril, * _barril2;
-    sf::Texture * _textBarril;
+    sf::Sprite * _barril, * _barril2, *_mapa;
+    sf::Texture * _textBarril, *_textMapa;
     sf::Clock * _reloj;
     void moverBarril();
     

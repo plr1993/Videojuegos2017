@@ -36,8 +36,8 @@ Companyero::Companyero() {
     _textVida = new sf::Texture;
     _textVida->loadFromFile("resources/vida-comp/30.png");
     _vida->setTexture(*_textVida);
-    _vida->setPosition(20, 150);
-    _vida->scale(0.2, 0.2);
+    _vida->setPosition(40, 130);
+    _vida->scale(0.15, 0.15);
     
     
 }
@@ -55,7 +55,7 @@ Companyero::~Companyero() {
 }
 
 void Companyero::drawCompanyero(Render* window) {
-    //window->getWindow()->draw(*_vida);
+    window->getWindow()->draw(*_vida);
     window->getWindow()->draw(*_survivor2);
 }
 

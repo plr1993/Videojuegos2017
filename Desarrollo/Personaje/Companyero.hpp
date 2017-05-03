@@ -15,12 +15,13 @@
 #define COMPANYERO_HPP
 #include "Motor/Render.hpp"
 #include "Mapa.hpp"
+#include "Motor/Camera.hpp"
 #include <math.h>       /* atan2 */
 #include <iostream>
 #include <sstream>
 using namespace std;
 const float PI2 = 3.14159265;
-const float speed2 = 200.f;
+const float speed2 = 300.f;
 class Companyero {
 public:
      Companyero();
@@ -28,7 +29,7 @@ public:
     virtual ~Companyero();
     void tecladoCompanyero();
     void drawCompanyero(Render * window);
-    void updateCompanyero(Render * window,float posX,float posY,Mapa * mapa);
+    void updateCompanyero(Render * window,float posX,float posY,Mapa * mapa, Camera * camera);
     void perseguir(float posX, float posY, float &speedx, float &speedy, float factor);
     void disparo(Render * window);
     void cambiarArma();

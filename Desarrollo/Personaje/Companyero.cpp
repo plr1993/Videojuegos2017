@@ -24,7 +24,7 @@ Companyero::Companyero() {
      //Inicio el Survivor
     _survivor2 = new sf::Sprite;
     _textSurvivor2 = new sf::Texture;
-    _textSurvivor2->loadFromFile("resources/survivor2-fusil.png");
+    _textSurvivor2->loadFromFile("resources/survivor2-pistola.png");
     _survivor2->setTexture(*_textSurvivor2);
     _survivor2->setPosition(1250/4, 750/2); //Esto es el centro del juego, habra que cambiarlo
     _survivor2->setOrigin(100.0, 100.0);
@@ -65,7 +65,7 @@ void Companyero::tecladoCompanyero() {
 }
 
 
-void Companyero::updateCompanyero(Render* window,float posX,float posY,Mapa * mapa) {//mapa es el enemigo al que tiene que disparar
+void Companyero::updateCompanyero(Render* window,float posX,float posY,Mapa * mapa, Camera * camera) {//mapa es el enemigo al que tiene que disparar
     //MOVIMIENTO HACIA EL PERSONAJE PRINCIPAL
     sf::Vector2f movement(0.f, 0.f);
     sf::Time frameTime=frameClock.restart();
@@ -114,7 +114,9 @@ void Companyero::updateCompanyero(Render* window,float posX,float posY,Mapa * ma
             _bala->setRotation(rotation);
         }
      ///////////////////////////////////////////////////////////////////////////
-   
+   //MUEVO LA VIDA CON LA CAMARA
+   _vida->setPosition(camera->getCamera().getCenter().x - 900, camera->getCamera().getCenter().y-400);
+    
 }
 
 void Companyero::cambiarArma() {

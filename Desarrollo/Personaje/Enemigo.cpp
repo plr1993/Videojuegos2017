@@ -362,7 +362,6 @@ void Enemigo::updateNpc(Render * window, float posX, float posY){
     
     
     
-    
 }
 
 

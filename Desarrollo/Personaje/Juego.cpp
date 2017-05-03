@@ -40,13 +40,10 @@ Juego::Juego() {
     _barraSuperior->setPosition(0, 0);
     
     //Creo los enemigos
-    _enemigos[0]=new Enemigo();
-    _enemigos[1]=new Enemigo();
-    _enemigos[2]=new Enemigo();
-    _enemigos[3]=new Enemigo();
-    _enemigos[4]=new Enemigo();
-    _enemigos[5]=new Enemigo();
-    _enemigos[6]=new Enemigo();
+    for(int i = 0; i<10; i++){
+        _enemigos[i] = new Enemigo();
+    }
+    
 }
 
 Juego::Juego(const Juego& orig) {
@@ -64,14 +61,10 @@ Juego::~Juego() {
     delete _camera;
     delete _barraSuperior;
     delete _textBarra;
-    
-    delete _enemigos[0];
-    delete _enemigos[1];
-    delete _enemigos[2];
-    delete _enemigos[3];
-    delete _enemigos[4];
-    delete _enemigos[5];
-    delete _enemigos[6];
+
+    for(int i = 0; i<10; i++){
+        delete _enemigos[i];
+    }
     
 }
 
@@ -90,13 +83,10 @@ void Juego::draw() {
         _companyero->drawCompanyero(_window);
         _window->getWindow()->draw(*_barraSuperior);
         //Pinto los enemigos
-        _enemigos[0]->drawNpc(_window);
-        _enemigos[1]->drawNpc(_window);
-        _enemigos[2]->drawNpc(_window);
-        _enemigos[3]->drawNpc(_window);
-        _enemigos[4]->drawNpc(_window);
-        _enemigos[5]->drawNpc(_window);
-        _enemigos[6]->drawNpc(_window);
+        for(int i = 0; i<10; i++){
+            _enemigos[i]->drawNpc(_window);
+        }
+        
 
     }
     //Pinto el objetivo siempre
@@ -153,13 +143,10 @@ void Juego::update() {
        _companyero->disparo(_window);
        
        //Enemigos
-         _enemigos[0]->updateNpc(_window, posX, posY);
-         _enemigos[1]->updateNpc(_window, posX, posY);
-         _enemigos[2]->updateNpc(_window, posX, posY);
-         _enemigos[3]->updateNpc(_window, posX, posY);
-         _enemigos[4]->updateNpc(_window, posX, posY);
-         _enemigos[5]->updateNpc(_window, posX, posY);
-         _enemigos[6]->updateNpc(_window, posX, posY);
+       for(int i = 0; i<10; i++){
+           _enemigos[i]->updateNpc(_window, posX, posY);
+       }
+         
     }
     
     //Objetivo del puntero

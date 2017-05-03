@@ -23,12 +23,7 @@ Personaje::Personaje() {
     _survivor->setOrigin(100.0, 100.0);
     _survivor->scale(0.8, 0.8);
     
-    //Inicio el Objetivo
-    _objective = new sf::Sprite;
-    _textObj = new sf::Texture;
-    _textObj->loadFromFile("resources/objective.png");
-    _objective->setTexture(*_textObj);
-    _objective->scale(0.1, 0.1);
+    
     
     //Inicio la bala
     _bala = new sf::Sprite;
@@ -60,8 +55,6 @@ Personaje::Personaje(const Personaje& orig) {
 Personaje::~Personaje() {
     delete _survivor;
     delete _textSurvivor;
-    delete _objective;
-    delete _textObj;
     delete _frameClock;
     delete _bala;
     delete _textBala;
@@ -72,7 +65,6 @@ Personaje::~Personaje() {
 
 void Personaje::drawPersonaje(Render* window) {
     window->getWindow()->draw(*_survivor);
-    window->getWindow()->draw(*_objective);
     window->getWindow()->draw(*_vida);
     if(_disparo){
         window->getWindow()->draw(*_bala);
@@ -90,7 +82,6 @@ void Personaje::updatePersonaje(Render * window, Camera * camera) {
      float rotation = (atan2(dy, dx)) * 180 / PI;
      _survivor->setRotation(rotation);
      //Movemos el objetivo con el movimiento del raton
-     _objective->setPosition(mouse_pos);
      updateBala();
      
      //MUEVO LA VIDA CON LA CAMARA

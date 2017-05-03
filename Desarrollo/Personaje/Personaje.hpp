@@ -40,8 +40,8 @@ public:
     void colisionesMapa(Mapa * mapa);
     sf::Sprite * getPersonaje();
 private:
-    sf::Sprite * _survivor, *_objective, *_bala, *_vida;
-    sf::Texture * _textSurvivor, *_textObj, *_textBala, *_textVida;
+    sf::Sprite * _survivor, *_bala, *_vida;
+    sf::Texture * _textSurvivor, *_textBala, *_textVida;
     sf::Clock * _frameClock, *_clock;
     bool _disparo, _colision;
     int _cantVida, _mouseX, _mouseY, _inicialBalaX, _inicialBalaY;

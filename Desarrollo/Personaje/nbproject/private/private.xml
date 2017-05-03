@@ -11,13 +11,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Users/sergio/Documents/GitHub/Videojuegos2017/Desarrollo/Personaje/Juego.cpp</file>
-            <file>file:/Users/sergio/Documents/GitHub/Videojuegos2017/Desarrollo/Personaje/Update.cpp</file>
+            <file>file:/Users/sergio/Documents/GitHub/Videojuegos2017/Desarrollo/Personaje/Enemigo.cpp</file>
+            <file>file:/Users/sergio/Documents/GitHub/Videojuegos2017/Desarrollo/Personaje/Personaje.hpp</file>
             <file>file:/Users/sergio/Documents/GitHub/Videojuegos2017/Desarrollo/Personaje/Juego.hpp</file>
-            <file>file:/Users/sergio/Documents/GitHub/Videojuegos2017/Desarrollo/Personaje/Mapa.hpp</file>
-            <file>file:/Users/sergio/Documents/GitHub/Videojuegos2017/Desarrollo/Personaje/Personaje.cpp</file>
-            <file>file:/Users/sergio/Documents/GitHub/Videojuegos2017/Desarrollo/Personaje/Menu.cpp</file>
-            <file>file:/Users/sergio/Documents/GitHub/Videojuegos2017/Desarrollo/Personaje/Mapa.cpp</file>
-            <file>file:/Users/sergio/Documents/GitHub/Videojuegos2017/Desarrollo/Personaje/Motor/Camera.cpp</file>
+            <file>file:/Users/sergio/Documents/GitHub/Videojuegos2017/Desarrollo/Personaje/Enemigo.hpp</file>
         </group>
     </open-files>
 </project-private>

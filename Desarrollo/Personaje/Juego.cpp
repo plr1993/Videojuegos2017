@@ -38,6 +38,15 @@ Juego::Juego() {
     _textBarra->loadFromFile("resources/barra-superior.png");
     _barraSuperior->setTexture(*_textBarra);
     _barraSuperior->setPosition(0, 0);
+    
+    //Creo los enemigos
+    _enemigos[0]=new Enemigo();
+    _enemigos[1]=new Enemigo();
+    _enemigos[2]=new Enemigo();
+    _enemigos[3]=new Enemigo();
+    _enemigos[4]=new Enemigo();
+    _enemigos[5]=new Enemigo();
+    _enemigos[6]=new Enemigo();
 }
 
 Juego::Juego(const Juego& orig) {
@@ -55,6 +64,15 @@ Juego::~Juego() {
     delete _camera;
     delete _barraSuperior;
     delete _textBarra;
+    
+    delete _enemigos[0];
+    delete _enemigos[1];
+    delete _enemigos[2];
+    delete _enemigos[3];
+    delete _enemigos[4];
+    delete _enemigos[5];
+    delete _enemigos[6];
+    
 }
 
 Render* Juego::getWindow() {
@@ -67,11 +85,18 @@ void Juego::draw() {
     if(*_estado->getEstado() == 0 || *_estado->getEstado() == 1 ||* _estado->getEstado() == 2){
         _menu->drawMenu(_window, _estado);
     }else if(*_estado->getEstado() == 3){
-        
         _mapa->drawMapa(_window);
-        _window->getWindow()->draw(*_barraSuperior);
         _personaje->drawPersonaje(_window);
         _companyero->drawCompanyero(_window);
+        _window->getWindow()->draw(*_barraSuperior);
+        //Pinto los enemigos
+        _enemigos[0]->drawNpc(_window);
+        _enemigos[1]->drawNpc(_window);
+        _enemigos[2]->drawNpc(_window);
+        _enemigos[3]->drawNpc(_window);
+        _enemigos[4]->drawNpc(_window);
+        _enemigos[5]->drawNpc(_window);
+        _enemigos[6]->drawNpc(_window);
 
     }
     //Pinto el objetivo siempre
@@ -116,16 +141,25 @@ void Juego::update() {
     if(*_estado->getEstado() == 0 || *_estado->getEstado() == 1 || *_estado->getEstado() == 2){ //Menu principal
        _menu->updateMenu(_window, _objective, _estado);
     }else if(*_estado->getEstado() == 3){ //Juego
-       _personaje->updatePersonaje(_window);
+       controlarCamera();
+       _personaje->updatePersonaje(_window, _camera);
        _personaje->disparo(_window);
        _mapa->updateMapa();
-       controlarCamera();
        _window->getWindow()->setView(_camera->getCamera());
        //Compañero
        float posX=_personaje->getPersonaje()->getPosition().x;//posicion del protagonista
        float posY=_personaje->getPersonaje()->getPosition().y;//posicion del protagonista
-       _companyero->updateCompanyero(_window,posX, posY,_mapa);
+       _companyero->updateCompanyero(_window,posX, posY,_mapa, _camera);
        _companyero->disparo(_window);
+       
+       //Enemigos
+         _enemigos[0]->updateNpc(_window, posX, posY);
+         _enemigos[1]->updateNpc(_window, posX, posY);
+         _enemigos[2]->updateNpc(_window, posX, posY);
+         _enemigos[3]->updateNpc(_window, posX, posY);
+         _enemigos[4]->updateNpc(_window, posX, posY);
+         _enemigos[5]->updateNpc(_window, posX, posY);
+         _enemigos[6]->updateNpc(_window, posX, posY);
     }
     
     //Objetivo del puntero
@@ -140,6 +174,12 @@ void Juego::updateIA() {
 }
 
 void Juego::controlarCamera() {
-    _camera->setCenter(_personaje->getPersonaje()->getPosition().x, _personaje->getPersonaje()->getPosition().y);
-    _barraSuperior->setPosition(_camera->getCamera().getCenter().x-960, _camera->getCamera().getCenter().y-550);
+    if(_personaje->getPersonaje()->getPosition().x < 1500 && _personaje->getPersonaje()->getPosition().x > 425){
+        _camera->setCenter(_personaje->getPersonaje()->getPosition().x, _camera->getCamera().getCenter().y);
+        _barraSuperior->setPosition(_camera->getCamera().getCenter().x-960, _camera->getCamera().getCenter().y-550);
+    }
+    if(_personaje->getPersonaje()->getPosition().y < 1485  && _personaje->getPersonaje()->getPosition().y > 400){
+        _camera->setCenter(_camera->getCamera().getCenter().x, _personaje->getPersonaje()->getPosition().y);
+        _barraSuperior->setPosition(_camera->getCamera().getCenter().x-960, _camera->getCamera().getCenter().y-550);
+    }
 }

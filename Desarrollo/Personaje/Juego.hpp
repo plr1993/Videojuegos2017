@@ -17,6 +17,7 @@
 #include "Mapa.hpp"
 #include "Menu.hpp"
 #include "Estado.hpp"
+#include "Enemigo.hpp"
 #ifndef JUEGO_HPP
 #define JUEGO_HPP
 
@@ -42,6 +43,7 @@ private:
     Estado *_estado;
     sf::Sprite *_objective, *_barraSuperior;
     sf::Texture *_textObj, *_textBarra;
+    Enemigo *_enemigos[10];
 
 };
 

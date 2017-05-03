@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/Companyero.o \
+	${OBJECTDIR}/Enemigo.o \
 	${OBJECTDIR}/Estado.o \
 	${OBJECTDIR}/Juego.o \
 	${OBJECTDIR}/Mapa.o \
@@ -79,6 +80,11 @@ ${OBJECTDIR}/Companyero.o: Companyero.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Companyero.o Companyero.cpp
+
+${OBJECTDIR}/Enemigo.o: Enemigo.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Enemigo.o Enemigo.cpp
 
 ${OBJECTDIR}/Estado.o: Estado.cpp
 	${MKDIR} -p ${OBJECTDIR}

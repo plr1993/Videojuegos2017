@@ -17,7 +17,7 @@ Personaje::Personaje() {
     //Inicio el Survivor
     _survivor = new sf::Sprite;
     _textSurvivor = new sf::Texture;
-    _textSurvivor->loadFromFile("resources/survivor-fusil.png");
+    _textSurvivor->loadFromFile("resources/survivor-pistola.png");
     _survivor->setTexture(*_textSurvivor);
     _survivor->setPosition(1920/2, 1080/2); //Esto es el centro del juego, habra que cambiarlo
     _survivor->setOrigin(100.0, 100.0);
@@ -37,15 +37,14 @@ Personaje::Personaje() {
     _bala->setTexture(*_textBala);
     _disparo = false;
     
-    //Inicio la vida
+
     _cantVida = 30;
     _vida = new sf::Sprite;
     _textVida = new sf::Texture;
     _textVida->loadFromFile("resources/vida/30.png");
     _vida->setTexture(*_textVida);
-    _vida->setPosition(40, 20);
+    _vida->setPosition(40, 130);
     _vida->scale(0.20, 0.20);
-    _vida->setOrigin(0, 0);
     
     //Inicio los relojes
     _frameClock = new sf::Clock;
@@ -82,7 +81,7 @@ void Personaje::drawPersonaje(Render* window) {
 
 }
 
-void Personaje::updatePersonaje(Render * window) {
+void Personaje::updatePersonaje(Render * window, Camera * camera) {
      sf::Vector2f mouse_pos = window->getWindow()->mapPixelToCoords(sf::Mouse::getPosition(*window->getWindow()));
 
      float dx = mouse_pos.x - _survivor->getPosition().x;
@@ -93,6 +92,9 @@ void Personaje::updatePersonaje(Render * window) {
      //Movemos el objetivo con el movimiento del raton
      _objective->setPosition(mouse_pos);
      updateBala();
+     
+     //MUEVO LA VIDA CON LA CAMARA
+   _vida->setPosition(camera->getCamera().getCenter().x - 900, camera->getCamera().getCenter().y-520);
 }
 
 void Personaje::updateBala() {

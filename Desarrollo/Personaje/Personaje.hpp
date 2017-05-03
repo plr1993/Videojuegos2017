@@ -15,6 +15,7 @@
 #define PERSONAJE_HPP
 #include "Motor/Render.hpp"
 #include "Mapa.hpp"
+#include "Motor/Camera.hpp"
 #include <math.h>       /* atan2 */
 #include <iostream>
 #include <sstream>
@@ -31,7 +32,7 @@ public:
     virtual ~Personaje();
     void tecladoPersonaje();
     void drawPersonaje(Render * window);
-    void updatePersonaje(Render * window);
+    void updatePersonaje(Render * window, Camera * camera);
     void updateBala();
     void disparo(Render * window);
     void cambiarArma();

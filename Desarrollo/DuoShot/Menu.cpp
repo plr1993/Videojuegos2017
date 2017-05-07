@@ -108,12 +108,12 @@ Menu::Menu() {
     _botonVolver = new sf::Sprite;
     _botonVolver->setTexture(*_texCuadrado);
     _botonVolver->scale(0.7, 0.7);
-    _botonVolver->setPosition(1350, 150);
+    _botonVolver->setPosition(1350, 30);
     
     _textVolver = new sf::Text("Menu principal", *_font);
     _textVolver->setColor(sf::Color::White);
     _textVolver->setCharacterSize(30);
-    _textVolver->setPosition(1430, 190);
+    _textVolver->setPosition(1430, 70);
     
     //Cargamos el menu de los controles
     _controles = new sf::Sprite;

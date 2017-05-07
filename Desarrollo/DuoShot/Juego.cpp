@@ -137,7 +137,6 @@ void Juego::update() {
             _estado->setEstado(0);
         }
     }
-    cout << *_estado->getEstado() << endl;
     //Segun el estado cargo una cosa u otra
     if(*_estado->getEstado() == 0 || *_estado->getEstado() == 1 || *_estado->getEstado() == 2){ //Menu principal
        _menu->updateMenu(_window, _objective, _estado);

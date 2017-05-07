@@ -64,7 +64,7 @@ Menu::Menu() {
     _texMapaAguaHover = new sf::Texture;
     _texMapaAguaHover->loadFromFile("resources/mapa-agua-hover.png");
     _mapaAgua->setTexture(*_texMapaAgua);
-    _mapaAgua->setPosition(50, 350);
+    _mapaAgua->setPosition(50, 450);
     _mapaAgua->scale(0.95, 0.95);
     
     _mapaFuego = new sf::Sprite;
@@ -73,7 +73,7 @@ Menu::Menu() {
     _texMapaFuegoHover = new sf::Texture;
     _texMapaFuegoHover->loadFromFile("resources/mapa-fuego-hover.png");
     _mapaFuego->setTexture(*_texMapaFuego);
-    _mapaFuego->setPosition(680, 350);
+    _mapaFuego->setPosition(680, 450);
     _mapaFuego->scale(0.95, 0.95);
 
     
@@ -83,7 +83,7 @@ Menu::Menu() {
     _texMapaCiudadHover = new sf::Texture;
     _texMapaCiudadHover->loadFromFile("resources/mapa-ciudad-hover.png");
     _mapaCiudad->setTexture(*_texMapaCiudad);
-    _mapaCiudad->setPosition(1310, 350);
+    _mapaCiudad->setPosition(1310, 450);
     _mapaCiudad->scale(0.95, 0.95);
 
 
@@ -103,7 +103,7 @@ Menu::Menu() {
     _textSeleccionar = new sf::Text("Selecciona un mapa", *_font);
     _textSeleccionar->setColor(sf::Color::White);
     _textSeleccionar->setCharacterSize(70);
-    _textSeleccionar->setPosition(500, 900);
+    _textSeleccionar->setPosition(500, 980);
     
     _botonVolver = new sf::Sprite;
     _botonVolver->setTexture(*_texCuadrado);

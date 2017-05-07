@@ -14,7 +14,19 @@
 #include "Estado.hpp"
 
 Estado::Estado() {
-    _estado = new int(0);
+    /* ESTADO
+     0 -> Pantalla de inicio
+     1 -> Pantalla de seleccionar mapa
+     2 -> Pantalla de controles
+     3 -> Juego
+     */
+    
+    /*
+     1 -> Mapa de agua
+     2 -> Mapa de fuego
+     3 -> Mapa de ciudad
+     */
+    _estado = new int(0); 
     _mapa = new int(0);
 }
 
@@ -39,7 +51,14 @@ int* Estado::getMapa() {
 }
 
 void Estado::setMapa(int i) {
-    *_mapa = i;
+    if(i == 21){
+        *_mapa = 1;
+    }else if(i == 22){
+        *_mapa = 2;
+    }else if(i == 23){
+        *_mapa = 3;
+    }
+   
 }
 
 

@@ -20,7 +20,6 @@ Juego::Juego() {
    _personaje = new Personaje;
    _companyero = new Companyero;
    _mapa = new mapa;
-   _mapa->CargarMapa(2);
    _estado = new Estado;
    _menu = new Menu();
    _camera = new Camera();
@@ -123,12 +122,14 @@ void Juego::update() {
                 _estado->setEstado(1);
             }
         }else if(*_estado->getEstado() == 1){
-            if(_menu->colisionSelecMapa(_objective) == 2){
+            if(_menu->colisionSelecMapa(_objective) == 21 || _menu->colisionSelecMapa(_objective) == 22 ||_menu->colisionSelecMapa(_objective) == 23){
+                _estado->setMapa(_menu->colisionSelecMapa(_objective));
                 _estado->setEstado(2);
             }
         }else if(*_estado->getEstado() == 2){
             if(_menu->colisionesControles(_objective) == 3){
                 _estado->setEstado(3);
+                _mapa->CargarMapa(*_estado->getMapa());
             }
         }
         

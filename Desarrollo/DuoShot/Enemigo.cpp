@@ -542,5 +542,3 @@ void Enemigo::updateExplosion(){
 sf::Sprite * Enemigo::getEnemigo() {
     return enem;
 }
-
-        

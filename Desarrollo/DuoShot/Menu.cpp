@@ -252,21 +252,21 @@ int Menu::colisionSelecMapa(sf::Sprite* objective) {
     int num = -1;
     if(objective->getGlobalBounds().intersects(_mapaAgua->getGlobalBounds())){
         _mapaAgua->setTexture(*_texMapaAguaHover);
-        num = 2;
+        num = 21;
     }else{
         _mapaAgua->setTexture(*_texMapaAgua);
     }
             
     if(objective->getGlobalBounds().intersects(_mapaFuego->getGlobalBounds())){
         _mapaFuego->setTexture(*_texMapaFuegoHover);
-        num = 2;
+        num = 22;
     }else{
         _mapaFuego->setTexture(*_texMapaFuego);
     }
             
     if(objective->getGlobalBounds().intersects(_mapaCiudad->getGlobalBounds())){
         _mapaCiudad->setTexture(*_texMapaCiudadHover);
-         num = 2;
+         num = 23;
     }else{
         _mapaCiudad->setTexture(*_texMapaCiudad);
     }

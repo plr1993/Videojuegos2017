@@ -118,20 +118,25 @@ void Juego::update() {
     if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
     {  
         //Si cuando hace colision el raton con el menu cambiamos el estado
-        if(_menu->colisionMenu(_objective) == 1 && *_estado->getEstado() == 0){
-            _estado->setEstado(1);
+        if(*_estado->getEstado() == 0){
+            if(_menu->colisionMenu(_objective) == 1){
+                _estado->setEstado(1);
+            }
+        }else if(*_estado->getEstado() == 1){
+            if(_menu->colisionSelecMapa(_objective) == 2){
+                _estado->setEstado(2);
+            }
+        }else if(*_estado->getEstado() == 2){
+            if(_menu->colisionesControles(_objective) == 3){
+                _estado->setEstado(3);
+            }
         }
-        if(_menu->colisionSelecMapa(_objective) == 2 && *_estado->getEstado() == 1){
-            _estado->setEstado(2);
-        }
-        if(_menu->colisionesControles(_objective) == 3 && *_estado->getEstado() == 2){
-            _estado->setEstado(3);
-        }
+        
+        
         if(_menu->colisionSelecMapa(_objective) == 0 && *_estado->getEstado() == 1){
             _estado->setEstado(0);
         }
     }
-    
     //Segun el estado cargo una cosa u otra
     if(*_estado->getEstado() == 0 || *_estado->getEstado() == 1 || *_estado->getEstado() == 2){ //Menu principal
        _menu->updateMenu(_window, _objective, _estado);

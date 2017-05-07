@@ -143,7 +143,7 @@ void mapa::CargarMapa(int nivel){
     int columns = _tilesetTexture.getSize().x / _tileWidth;
     int rows = _tilesetTexture.getSize().y / _tileHeight;
     
-    cout<<"tamanyo columnas" << columns << "tamanyo rows" << rows << endl;
+    //cout<<"tamanyo columnas" << columns << "tamanyo rows" << rows << endl;
     
     _tilesetSprite =new sf::Sprite[columns*rows];     
     int t=0;

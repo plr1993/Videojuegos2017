@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>Companyero.hpp</itemPath>
+      <itemPath>Enemigo.hpp</itemPath>
+      <itemPath>Estado.hpp</itemPath>
+      <itemPath>Juego.hpp</itemPath>
+      <itemPath>Mapa.hpp</itemPath>
+      <itemPath>Menu.hpp</itemPath>
+      <itemPath>Personaje.hpp</itemPath>
+      <itemPath>Update.hpp</itemPath>
+      <itemPath>tinystr.h</itemPath>
+      <itemPath>tinyxml.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="Motor" displayName="Motor" projectFiles="true">
+      <itemPath>Motor/Camera.cpp</itemPath>
+      <itemPath>Motor/Camera.hpp</itemPath>
+      <itemPath>Motor/Render.cpp</itemPath>
+      <itemPath>Motor/Render.hpp</itemPath>
+      <itemPath>Motor/Sprite.cpp</itemPath>
+      <itemPath>Motor/Sprite.hpp</itemPath>
+      <itemPath>Motor/Text.cpp</itemPath>
+      <itemPath>Motor/Text.hpp</itemPath>
+      <itemPath>Motor/_DS_Store</itemPath>
+    </logicalFolder>
+    <logicalFolder name="resources" displayName="resources" projectFiles="true">
+      <logicalFolder name="vida" displayName="vida" projectFiles="true">
+        <itemPath>resources/vida/0.png</itemPath>
+        <itemPath>resources/vida/1.png</itemPath>
+        <itemPath>resources/vida/10.png</itemPath>
+        <itemPath>resources/vida/11.png</itemPath>
+        <itemPath>resources/vida/12.png</itemPath>
+        <itemPath>resources/vida/13.png</itemPath>
+        <itemPath>resources/vida/14.png</itemPath>
+        <itemPath>resources/vida/15.png</itemPath>
+        <itemPath>resources/vida/16.png</itemPath>
+        <itemPath>resources/vida/17.png</itemPath>
+        <itemPath>resources/vida/18.png</itemPath>
+        <itemPath>resources/vida/19.png</itemPath>
+        <itemPath>resources/vida/2.png</itemPath>
+        <itemPath>resources/vida/20.png</itemPath>
+        <itemPath>resources/vida/21.png</itemPath>
+        <itemPath>resources/vida/22.png</itemPath>
+        <itemPath>resources/vida/23.png</itemPath>
+        <itemPath>resources/vida/24.png</itemPath>
+        <itemPath>resources/vida/25.png</itemPath>
+        <itemPath>resources/vida/26.png</itemPath>
+        <itemPath>resources/vida/27.png</itemPath>
+        <itemPath>resources/vida/28.png</itemPath>
+        <itemPath>resources/vida/29.png</itemPath>
+        <itemPath>resources/vida/3.png</itemPath>
+        <itemPath>resources/vida/30.png</itemPath>
+        <itemPath>resources/vida/4.png</itemPath>
+        <itemPath>resources/vida/5.png</itemPath>
+        <itemPath>resources/vida/6.png</itemPath>
+        <itemPath>resources/vida/7.png</itemPath>
+        <itemPath>resources/vida/8.png</itemPath>
+        <itemPath>resources/vida/9.png</itemPath>
+      </logicalFolder>
+      <logicalFolder name="vida-comp" displayName="vida-comp" projectFiles="true">
+        <itemPath>resources/vida-comp/0.png</itemPath>
+        <itemPath>resources/vida-comp/1.png</itemPath>
+        <itemPath>resources/vida-comp/10.png</itemPath>
+        <itemPath>resources/vida-comp/11.png</itemPath>
+        <itemPath>resources/vida-comp/12.png</itemPath>
+        <itemPath>resources/vida-comp/13.png</itemPath>
+        <itemPath>resources/vida-comp/14.png</itemPath>
+        <itemPath>resources/vida-comp/15.png</itemPath>
+        <itemPath>resources/vida-comp/16.png</itemPath>
+        <itemPath>resources/vida-comp/17.png</itemPath>
+        <itemPath>resources/vida-comp/18.png</itemPath>
+        <itemPath>resources/vida-comp/19.png</itemPath>
+        <itemPath>resources/vida-comp/2.png</itemPath>
+        <itemPath>resources/vida-comp/20.png</itemPath>
+        <itemPath>resources/vida-comp/21.png</itemPath>
+        <itemPath>resources/vida-comp/22.png</itemPath>
+        <itemPath>resources/vida-comp/23.png</itemPath>
+        <itemPath>resources/vida-comp/24.png</itemPath>
+        <itemPath>resources/vida-comp/25.png</itemPath>
+        <itemPath>resources/vida-comp/26.png</itemPath>
+        <itemPath>resources/vida-comp/27.png</itemPath>
+        <itemPath>resources/vida-comp/28.png</itemPath>
+        <itemPath>resources/vida-comp/29.png</itemPath>
+        <itemPath>resources/vida-comp/3.png</itemPath>
+        <itemPath>resources/vida-comp/30.png</itemPath>
+        <itemPath>resources/vida-comp/4.png</itemPath>
+        <itemPath>resources/vida-comp/5.png</itemPath>
+        <itemPath>resources/vida-comp/6.png</itemPath>
+        <itemPath>resources/vida-comp/7.png</itemPath>
+        <itemPath>resources/vida-comp/8.png</itemPath>
+        <itemPath>resources/vida-comp/9.png</itemPath>
+      </logicalFolder>
+      <itemPath>resources/Alien.png</itemPath>
+      <itemPath>resources/Alien2.png</itemPath>
+      <itemPath>resources/Alien3.png</itemPath>
+      <itemPath>resources/Alien4.png</itemPath>
+      <itemPath>resources/armas_final.png</itemPath>
+      <itemPath>resources/bala.png</itemPath>
+      <itemPath>resources/barra-superior.png</itemPath>
+      <itemPath>resources/barril.png</itemPath>
+      <itemPath>resources/barril2.png</itemPath>
+      <itemPath>resources/barril3.png</itemPath>
+      <itemPath>resources/boton-jugar-hover.png</itemPath>
+      <itemPath>resources/boton-jugar.png</itemPath>
+      <itemPath>resources/controles.png</itemPath>
+      <itemPath>resources/cuadrado.png</itemPath>
+      <itemPath>resources/cuadrado_hover.png</itemPath>
+      <itemPath>resources/fondo.jpg</itemPath>
+      <itemPath>resources/gameplay.ttf</itemPath>
+      <itemPath>resources/logo.png</itemPath>
+      <itemPath>resources/mapa-agua-hover.png</itemPath>
+      <itemPath>resources/mapa-agua.png</itemPath>
+      <itemPath>resources/mapa-ciudad-hover.png</itemPath>
+      <itemPath>resources/mapa-ciudad.png</itemPath>
+      <itemPath>resources/mapa-fuego-hover.png</itemPath>
+      <itemPath>resources/mapa-fuego.png</itemPath>
+      <itemPath>resources/objective.png</itemPath>
+      <itemPath>resources/survivor-fusil.png</itemPath>
+      <itemPath>resources/survivor-pistola.png</itemPath>
+      <itemPath>resources/survivor-rifle.png</itemPath>
+      <itemPath>resources/survivor-taser.png</itemPath>
+      <itemPath>resources/survivor2-fusil.png</itemPath>
+      <itemPath>resources/survivor2-pistola.png</itemPath>
+      <itemPath>resources/survivor2-rifle.png</itemPath>
+      <itemPath>resources/survivor2-taser.png</itemPath>
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>Agua.tmx</itemPath>
+      <itemPath>Ciudad.tmx</itemPath>
+      <itemPath>Companyero.cpp</itemPath>
+      <itemPath>Enemigo.cpp</itemPath>
+      <itemPath>Estado.cpp</itemPath>
+      <itemPath>Fuego.tmx</itemPath>
+      <itemPath>Juego.cpp</itemPath>
+      <itemPath>Mapa.cpp</itemPath>
+      <itemPath>Menu.cpp</itemPath>
+      <itemPath>Personaje.cpp</itemPath>
+      <itemPath>Update.cpp</itemPath>
+      <itemPath>main.cpp</itemPath>
+      <itemPath>tinystr.cpp</itemPath>
+      <itemPath>tinyxml.cpp</itemPath>
+      <itemPath>tinyxmlerror.cpp</itemPath>
+      <itemPath>tinyxmlparser.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="tileset" displayName="tileset" projectFiles="true">
+      <itemPath>tileset/Agua.png</itemPath>
+      <itemPath>tileset/CiudadDef.jpg</itemPath>
+      <itemPath>tileset/Pruebadef.jpg</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>Resource</Elem>
+    <Elem>tileset</Elem>
+    <Elem>tinyxml</Elem>
+    <Elem>Motor</Elem>
+    <Elem>resource</Elem>
+    <Elem>resources</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <linkerTool>
+          <linkerDynSerch>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
+          </linkerDynSerch>
+          <commandLine>-framework sfml-window -framework sfml-graphics -framework sfml-system</commandLine>
+        </linkerTool>
+      </compileType>
+      <item path="Agua.tmx" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Ciudad.tmx" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Companyero.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Companyero.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Enemigo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Enemigo.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Estado.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Estado.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Fuego.tmx" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Juego.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Juego.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Mapa.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Mapa.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Menu.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Menu.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Motor/Camera.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Motor/Camera.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Motor/Render.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Motor/Render.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Motor/Sprite.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Motor/Sprite.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Motor/Text.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Motor/Text.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Motor/_DS_Store" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Personaje.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Personaje.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Update.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Update.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="resources/Alien.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/Alien2.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/Alien3.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/Alien4.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/armas_final.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/bala.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/barra-superior.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/barril.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/barril2.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/barril3.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/boton-jugar-hover.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/boton-jugar.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/controles.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/cuadrado.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/cuadrado_hover.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/fondo.jpg" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/gameplay.ttf" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/logo.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/mapa-agua-hover.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/mapa-agua.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/mapa-ciudad-hover.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/mapa-ciudad.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/mapa-fuego-hover.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/mapa-fuego.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/objective.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/survivor-fusil.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/survivor-pistola.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/survivor-rifle.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/survivor-taser.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/survivor2-fusil.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/survivor2-pistola.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/survivor2-rifle.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/survivor2-taser.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/0.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/1.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/10.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/11.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/12.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/13.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/14.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/15.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/16.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/17.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/18.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/19.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/2.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/20.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/21.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/22.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/23.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/24.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/25.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/26.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/27.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/28.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/29.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/3.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/30.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/4.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/5.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/6.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/7.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/8.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/9.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/0.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/1.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/10.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/11.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/12.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/13.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/14.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/15.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/16.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/17.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/18.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/19.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/2.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/20.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/21.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/22.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/23.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/24.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/25.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/26.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/27.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/28.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/29.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/3.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/30.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/4.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/5.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/6.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/7.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/8.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/9.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tileset/Agua.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tileset/CiudadDef.jpg" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tileset/Pruebadef.jpg" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tinystr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tinystr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tinyxml.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tinyxml.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tinyxmlerror.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tinyxmlparser.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <linkerTool>
+          <linkerDynSerch>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
+          </linkerDynSerch>
+        </linkerTool>
+      </compileType>
+      <item path="Agua.tmx" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Ciudad.tmx" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Companyero.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Companyero.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Enemigo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Enemigo.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Estado.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Estado.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Fuego.tmx" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Juego.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Juego.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Mapa.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Mapa.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Menu.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Menu.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Motor/Camera.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Motor/Camera.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Motor/Render.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Motor/Render.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Motor/Sprite.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Motor/Sprite.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Motor/Text.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Motor/Text.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Motor/_DS_Store" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Personaje.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Personaje.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Update.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Update.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="resources/Alien.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/Alien2.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/Alien3.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/Alien4.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/armas_final.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/bala.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/barra-superior.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/barril.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/barril2.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/barril3.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/boton-jugar-hover.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/boton-jugar.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/controles.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/cuadrado.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/cuadrado_hover.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/fondo.jpg" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/gameplay.ttf" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/logo.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/mapa-agua-hover.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/mapa-agua.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/mapa-ciudad-hover.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/mapa-ciudad.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/mapa-fuego-hover.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/mapa-fuego.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/objective.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/survivor-fusil.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/survivor-pistola.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/survivor-rifle.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/survivor-taser.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/survivor2-fusil.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/survivor2-pistola.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/survivor2-rifle.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/survivor2-taser.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/0.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/1.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/10.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/11.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/12.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/13.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/14.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/15.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/16.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/17.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/18.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/19.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/2.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/20.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/21.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/22.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/23.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/24.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/25.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/26.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/27.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/28.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/29.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/3.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/30.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/4.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/5.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/6.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/7.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/8.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida-comp/9.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/0.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/1.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/10.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/11.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/12.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/13.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/14.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/15.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/16.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/17.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/18.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/19.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/2.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/20.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/21.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/22.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/23.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/24.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/25.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/26.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/27.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/28.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/29.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/3.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/30.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/4.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/5.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/6.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/7.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/8.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/vida/9.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tileset/Agua.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tileset/CiudadDef.jpg" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tileset/Pruebadef.jpg" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tinystr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tinystr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tinyxml.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tinyxml.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tinyxmlerror.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tinyxmlparser.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

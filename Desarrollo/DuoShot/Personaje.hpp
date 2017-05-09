@@ -22,7 +22,7 @@
 using namespace std;
 
 const float PI = 3.14159265;
-const float speed = 200.f;
+const float speed = 75.f;
 const float speedBala = 2000;
 
 class Personaje {
@@ -34,7 +34,7 @@ public:
     void drawPersonaje(Render * window);
     void updatePersonaje(Render * window, Camera * camera);
     void updateBala();
-    void disparo(Render * window);
+    bool disparo(Render * window);
     void cambiarArma();
     void vida();
     void colisionesMapa(mapa * mapa);

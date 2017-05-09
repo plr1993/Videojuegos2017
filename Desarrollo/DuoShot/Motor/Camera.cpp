@@ -3,7 +3,7 @@
 
 Camera::Camera() {
    p_camera = new sf::View();
-   p_camera->setSize(1920, 1080);
+   p_camera->setSize(500, 281);
 
 }
 
@@ -21,5 +21,3 @@ sf::View Camera::getCamera() {
 void Camera::setCenter(float x, float y) {
     p_camera->setCenter(x, y);
 }
-
-

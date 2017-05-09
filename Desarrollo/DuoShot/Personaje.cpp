@@ -21,20 +21,21 @@ Personaje::Personaje() {
     _survivor->setTexture(*_textSurvivor);
     _survivor->setPosition(1920/2, 1080/2); //Esto es el centro del juego, habra que cambiarlo
     _survivor->setOrigin(100.0, 100.0);
-    _survivor->scale(0.8, 0.8);
+    _survivor->scale(0.20, 0.20);
     
     //Inicio el Objetivo
     _objective = new sf::Sprite;
     _textObj = new sf::Texture;
     _textObj->loadFromFile("resources/objective.png");
     _objective->setTexture(*_textObj);
-    _objective->scale(0.1, 0.1);
+    _objective->scale(0.03, 0.03);
     
     //Inicio la bala
     _bala = new sf::Sprite;
     _textBala = new sf::Texture;
     _textBala->loadFromFile("resources/bala.png");
     _bala->setTexture(*_textBala);
+    _bala->scale(0.2, 0.2);
     _disparo = false;
     
 
@@ -135,7 +136,8 @@ void Personaje::tecladoPersonaje() {
 
 }
 
-void Personaje::disparo(Render * window) {
+bool Personaje::disparo(Render * window) {
+    bool res = false;
     if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
     {   
         sf::Vector2f mouse_pos = window->getWindow()->mapPixelToCoords(sf::Mouse::getPosition(*window->getWindow()));
@@ -152,10 +154,12 @@ void Personaje::disparo(Render * window) {
         
          //Posicion inicial de la bala
          _bala->setPosition(_inicialBalaX, _inicialBalaY);
-         _bala->setRotation(_rotation);
+         _bala->setRotation(_rotation); 
                   
         _disparo = true;
+        res = true;
     }
+    return res;
 }
 
 //Este metodo es el que cambia de arma

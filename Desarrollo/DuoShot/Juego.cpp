@@ -37,7 +37,8 @@ Juego::Juego() {
     _textBarra = new sf::Texture;
     _textBarra->loadFromFile("resources/barra-superior.png");
     _barraSuperior->setTexture(*_textBarra);
-    _barraSuperior->setPosition(0, 0);
+    _barraSuperior->setPosition(700, 399);
+    _barraSuperior->scale(0.27, 0.27);
     
      //Creo los enemigos
     for(int i = 0; i<10; i++){
@@ -79,6 +80,7 @@ void Juego::draw() {
     //Segun el etsado pinto una cosa u otra
     if(*_estado->getEstado() == 0 || *_estado->getEstado() == 1 ||* _estado->getEstado() == 2){
         _menu->drawMenu(_window, _estado);
+         _window->getWindow()->draw(*_objective);
     }else if(*_estado->getEstado() == 3){
         _mapa->dibuja(_window);
         _personaje->drawPersonaje(_window);
@@ -95,7 +97,6 @@ void Juego::draw() {
     }
     //Pinto el objetivo siempre
 
-    _window->getWindow()->draw(*_objective);
     
     
     
@@ -144,7 +145,10 @@ void Juego::update() {
     }else if(*_estado->getEstado() == 3){ //Juego
        controlarCamera();
        _personaje->updatePersonaje(_window, _camera);
-       _personaje->disparo(_window);
+       //Si disparo tendre que comprobar si la bala le da
+       if(_personaje->disparo(_window)){
+           
+       }
        _window->getWindow()->setView(_camera->getCamera());
 
        
@@ -180,7 +184,7 @@ void Juego::update() {
     //Objetivo del puntero
     sf::Vector2f mouse_pos = _window->getWindow()->mapPixelToCoords(sf::Mouse::getPosition(*_window->getWindow()));
     _objective->setPosition(mouse_pos);
-
+    cout << _personaje->getPersonaje()->getPosition().x << " - " << _personaje->getPersonaje()->getPosition().y<< endl;
 }
 
 //Aqui vamos a llamar a la IA al boss
@@ -189,12 +193,12 @@ void Juego::updateIA() {
 }
 
 void Juego::controlarCamera() {
-    if(_personaje->getPersonaje()->getPosition().x < 1500 && _personaje->getPersonaje()->getPosition().x > 425){
+    if(_personaje->getPersonaje()->getPosition().x < 1029 && _personaje->getPersonaje()->getPosition().x > 555){
         _camera->setCenter(_personaje->getPersonaje()->getPosition().x, _camera->getCamera().getCenter().y);
-        _barraSuperior->setPosition(_camera->getCamera().getCenter().x-960, _camera->getCamera().getCenter().y-550);
+       _barraSuperior->setPosition(_camera->getCamera().getCenter().x-250, _camera->getCamera().getCenter().y-140);
     }
-    if(_personaje->getPersonaje()->getPosition().y < 1485  && _personaje->getPersonaje()->getPosition().y > 400){
+    if(_personaje->getPersonaje()->getPosition().y < 1135  && _personaje->getPersonaje()->getPosition().y > 140){
         _camera->setCenter(_camera->getCamera().getCenter().x, _personaje->getPersonaje()->getPosition().y);
-        _barraSuperior->setPosition(_camera->getCamera().getCenter().x-960, _camera->getCamera().getCenter().y-550);
+        _barraSuperior->setPosition(_camera->getCamera().getCenter().x-250, _camera->getCamera().getCenter().y-140);
     }
 }

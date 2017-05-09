@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/Colisionable.o \
 	${OBJECTDIR}/Companyero.o \
 	${OBJECTDIR}/Enemigo.o \
 	${OBJECTDIR}/Estado.o \
@@ -77,6 +78,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/duoshot: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/duoshot ${OBJECTFILES} ${LDLIBSOPTIONS} -framework sfml-window -framework sfml-graphics -framework sfml-system
+
+${OBJECTDIR}/Colisionable.o: Colisionable.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Colisionable.o Colisionable.cpp
 
 ${OBJECTDIR}/Companyero.o: Companyero.cpp
 	${MKDIR} -p ${OBJECTDIR}

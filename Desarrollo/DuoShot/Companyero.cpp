@@ -26,9 +26,9 @@ Companyero::Companyero() {
     _textSurvivor2 = new sf::Texture;
     _textSurvivor2->loadFromFile("resources/survivor2-pistola.png");
     _survivor2->setTexture(*_textSurvivor2);
-    _survivor2->setPosition(1920/2+50, 1080/2+50); //Esto es el centro del juego, habra que cambiarlo
+    _survivor2->setPosition(1920/2+20, 1080/2+20); //Esto es el centro del juego, habra que cambiarlo
     _survivor2->setOrigin(100.0, 100.0);
-    _survivor2->scale(0.8, 0.8);
+    _survivor2->scale(0.20, 0.20);
      //Inicio el Objetivo
     _objective = new sf::Sprite;
     _textObj = new sf::Texture;
@@ -61,7 +61,7 @@ Companyero::~Companyero() {
 
 void Companyero::drawCompanyero(Render* window) {
     window->getWindow()->draw(*_vida);
-    window->getWindow()->draw(*_objective);
+    //window->getWindow()->draw(*_objective);
     window->getWindow()->draw(*_survivor2);
 }
 
@@ -79,7 +79,7 @@ void Companyero::updateCompanyero(Render* window,float posX,float posY,mapa * ma
     float path = updatepath.getElapsedTime().asSeconds();
         
         if(path>0.5){
-            perseguir(posX, posY, speedx, speedy, 3);
+            perseguir(posX, posY, speedx, speedy, 1);
             updatepath.restart();
         }
     movement.x=speedx;
@@ -173,7 +173,7 @@ void Companyero::perseguir(float posX, float posY, float& speedx, float& speedy,
     
     int Distancia=sqrt(pow(posX-_survivor2->getPosition().x,2)+pow(posY-_survivor2->getPosition().y,2));
 
-    if(Distancia > 200){
+    if(Distancia > 50){
 
     //comprobamos la dirección de movimiento del enemigo
     if(movX>0){

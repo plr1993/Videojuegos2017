@@ -25,7 +25,7 @@ Enemigo::Enemigo() {
     
     //cargo las texturas
     enem=new sf::Sprite;
-    enem->scale(3.5, 3.5);
+    enem->scale(0.90, 0.90);
     texture=new sf::Texture;
     if(!texture->loadFromFile("resources/Alien.png"))
     {
@@ -110,7 +110,7 @@ Enemigo::Enemigo() {
     _textVida->loadFromFile("resources/vida/30.png");
     _vida->setTexture(*_textVida);
     _vida->setPosition(enem->getPosition().x, enem->getPosition().y-30);
-    _vida->scale(0.05, 0.05);
+    _vida->scale(0.01, 0.01);
     
     //balas de los enemigos que tengan armas
      balaprov = new sf::Sprite;
@@ -272,13 +272,13 @@ void Enemigo::perseguir(float posX, float posY, float &speedx, float &speedy, fl
 void Enemigo::updateNpc(Render * window, float posX, float posY){
     //velocidad de cada tipo de enemigo
     if(tipo==0 || tipo==1){
-        factor=1;
+        factor=0.25;
     }
     else if(tipo==2 || tipo==3 || tipo==4){
-        factor=1.5;
+        factor=0.50;
     }
     else{
-        factor=1.75;
+        factor=0.75;
     }
     
     sf::Vector2f movement(0.f, 0.f);
